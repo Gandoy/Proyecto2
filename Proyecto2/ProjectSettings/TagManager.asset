@@ -13,13 +13,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - GoThroughPlatform
+  - Player
+  - RegularTerrain
+  - PlayerThroughTerrain
+  - hurtbox
+  - hitbox
+  - projectile
   - 
   - 
   - 
