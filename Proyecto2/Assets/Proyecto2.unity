@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -731,15 +731,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4214705948800292, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.894
+    - target: {fileID: 1988410441090614, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
+      propertyPath: m_Name
+      value: Hurtbox
       objectReference: {fileID: 0}
-    - target: {fileID: 4214705948800292, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.688
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114045322908956120, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &177445970
@@ -1034,6 +1031,60 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &258170102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 258170103}
+  - component: {fileID: 258170105}
+  - component: {fileID: 258170104}
+  m_Layer: 16
+  m_Name: Hurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258170103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258170102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.72, y: 1.73, z: -0.69}
+  m_LocalScale: {x: 9.298402, y: 5.579618, z: 1.8508209}
+  m_Children: []
+  m_Father: {fileID: 1044230254}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &258170104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258170102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0534e5aeef3a4f448ff74ff52ff6b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Char: {fileID: 1044230260}
+--- !u!65 &258170105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258170102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &334434634
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,7 +7267,8 @@ GameObject:
   - component: {fileID: 1044230257}
   - component: {fileID: 1044230256}
   - component: {fileID: 1044230255}
-  m_Layer: 0
+  - component: {fileID: 1044230260}
+  m_Layer: 10
   m_Name: ParedDestructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7232,7 +7284,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -18.652138, y: -21.879131, z: -8.37154}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 258170103}
   m_Father: {fileID: 1564562853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7588,12 +7641,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &1044230260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044230253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cf00f3cb22d9346aed674b499d2765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Front: {x: 0, y: 0, z: 0}
+  MaxHP: 0
+  HP: 0
+  Texturas: []
 --- !u!43 &1065622993
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-726132
+  m_Name: pb_Mesh12282
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7734,6 +7802,29 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!114 &1178950969 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114176589092233478, guid: 3b4057fdb29f56c4dbcb28f551826b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 106506097}
+  m_Script: {fileID: 11500000, guid: dd2059444f890e6418a625d174bf3b29, type: 3}
+--- !u!1 &1197587543 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1988410441090614, guid: 3b4057fdb29f56c4dbcb28f551826b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 106506097}
+--- !u!114 &1197587546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197587543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0534e5aeef3a4f448ff74ff52ff6b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Char: {fileID: 1178950969}
 --- !u!1 &1211059593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8884,7 +8975,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12362
+  m_Name: pb_Mesh12312
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

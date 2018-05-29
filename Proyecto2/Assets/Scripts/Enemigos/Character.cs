@@ -15,7 +15,7 @@ public class Character : MonoBehaviour {
     {
         GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), Color.white);
     }
-    public void GetDamaged(int Damage)
+    public virtual void  GetDamaged(int Damage)
     {
         VisualQueue();
         HP -= Damage;

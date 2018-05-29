@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 135971570705241230}
   - component: {fileID: 114163309290765208}
   - component: {fileID: 114273414890118204}
-  - component: {fileID: 114876044307365012}
   - component: {fileID: 54503175915161978}
   m_Layer: 14
   m_Name: Stone
@@ -42,9 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4006395578838776}
   - component: {fileID: 135287327038619600}
-  - component: {fileID: 114616492337799338}
-  m_Layer: 0
-  m_Name: Sphere
+  - component: {fileID: 114410477233709818}
+  m_Layer: 13
+  m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627688782501458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6225674, y: 0.1, z: 2.7495809}
+  m_LocalPosition: {x: 0.09999904, y: 3.4829743, z: 3.22641}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4006395578838776}
@@ -160,7 +159,7 @@ MonoBehaviour:
   Force: {x: 0, y: 15, z: 15}
   Gravity: -2
   MaxFallSpeed: -5
---- !u!114 &114616492337799338
+--- !u!114 &114410477233709818
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -168,19 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708308662854728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0534e5aeef3a4f448ff74ff52ff6b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Char: {fileID: 0}
---- !u!114 &114876044307365012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1627688782501458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f9dc871004f884888d19af1536efcc, type: 3}
+  m_Script: {fileID: 11500000, guid: ca09b7a8c8192094d933482e4a449dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135287327038619600
