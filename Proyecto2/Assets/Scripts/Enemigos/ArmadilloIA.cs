@@ -19,8 +19,8 @@ public class ArmadilloIA : Character {
     private void Start()
     {
         CC = GetComponent<CharacterController>();
-        if (Player.PlayerSingleton == null)
-            Debug.Log("es null");
+      //  if (Player.PlayerSingleton == null)
+        //    Debug.Log("es null");
         PS = Player.PlayerSingleton;
     }
     private void Update()
@@ -34,6 +34,7 @@ public class ArmadilloIA : Character {
                 }
             case 1:
                 {
+                    //aca hacelo girar
                     Phy(PS.LeftOrRightFrom(transform.position.z));
                     break;
                 }
