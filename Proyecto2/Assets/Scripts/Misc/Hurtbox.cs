@@ -8,6 +8,7 @@ public class Hurtbox : MonoBehaviour {
 
   public void GetHit(int damage)
     {
+        Debug.Log("entroGetHit");
         Char.GetDamaged(damage);
     }
 }
