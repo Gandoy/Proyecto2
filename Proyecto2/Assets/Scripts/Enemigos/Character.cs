@@ -26,7 +26,7 @@ public class Character : MonoBehaviour {
         HP += Heal;
         if (HP > MaxHP) HP = MaxHP;
     }
-    private void Death()
+    protected virtual void Death()
     {
         //cosas que pasan cuando muere aca
     }

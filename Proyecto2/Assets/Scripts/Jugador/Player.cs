@@ -32,9 +32,20 @@ public class Player : Character {
     private GameObject Stone;
     [SerializeField]
     private Transform StoneOriginPoint;
+    [SerializeField]
+    private float MinDistToStopForEnemies;
+    public static Player PlayerSingleton;
     private void StopCJ()
     {
         ChrouchingJump = false;
+    }
+    public int LeftOrRightFrom(float here)
+    {
+        if (Mathf.Abs(here - transform.position.z) < MinDistToStopForEnemies)
+            return 0;
+        if (here > transform.position.z)
+            return -1;   
+        return 1;
     }
     protected override void StuffToDoOnAwake()
     {
@@ -43,6 +54,15 @@ public class Player : Character {
     }
     private void Awake()
     {
+        if (PlayerSingleton!=null)
+        {
+            Debug.Log("hay 2 jugadores, ojo");
+                }
+        else
+        {
+            Debug.Log("entro el singleton");
+            PlayerSingleton = this;
+        }
         StuffToDoOnAwake();
     }
    

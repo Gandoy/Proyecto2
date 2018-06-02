@@ -18,7 +18,7 @@ public class ParedDestruible :Character
 
     public override void GetDamaged(int Damage)
     {
-        Debug.Log("entro");
+        //Debug.Log("entrogetDamaged");
         if (CurrentPhase < Texturas.Count)
         {
             CurrentPhase++;
