@@ -38,8 +38,24 @@ public class Player : Character {
     [SerializeField]
     private float StoneCD;
     private float LastStone=0;
-
-
+    private int estadoDeBrazos;
+    private int estadoDePiernas;
+    public int EstadoDeBrazos()
+    {
+        return estadoDeBrazos;
+    }
+    public int EstadoDePiernas()
+    {
+        return estadoDePiernas;
+    }
+    public void CambiaEstadoDeBrazos(int Estado)
+    {
+        estadoDeBrazos = Estado;
+    }
+    public void CambiaEstadoDePiernas(int Estado)
+    {
+        estadoDePiernas = Estado;
+    }
     private void StopCJ()
     {
         ChrouchingJump = false;
@@ -124,6 +140,7 @@ public class Player : Character {
     {
         LastStone = Time.time;
         Instantiate(Stone, StoneOriginPoint.position, StoneOriginPoint.rotation);
+        CambiaEstadoDeBrazos(1);
     }
     void Update () {
         Physics();
