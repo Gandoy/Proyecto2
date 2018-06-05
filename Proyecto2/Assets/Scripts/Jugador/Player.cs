@@ -35,6 +35,11 @@ public class Player : Character {
     [SerializeField]
     private float MinDistToStopForEnemies;
     public static Player PlayerSingleton;
+    [SerializeField]
+    private float StoneCD;
+    private float LastStone=0;
+
+
     private void StopCJ()
     {
         ChrouchingJump = false;
@@ -113,15 +118,15 @@ public class Player : Character {
     }
     private bool TakeShootInput()
     {
-        return Input.GetKeyDown(Shoot);
+        return Input.GetKey(Shoot);
     }
     private void DoTheShooting()
     {
+        LastStone = Time.time;
         Instantiate(Stone, StoneOriginPoint.position, StoneOriginPoint.rotation);
     }
     void Update () {
         Physics();
-        if (TakeShootInput()) DoTheShooting();
-
+        if (TakeShootInput()&&Time.time>LastStone+StoneCD) DoTheShooting();
     }
 }

@@ -23,6 +23,10 @@ public class ArmadilloIA : Character {
         //    Debug.Log("es null");
         PS = Player.PlayerSingleton;
     }
+    protected override void Death()
+    {
+        Destroy(gameObject);
+    }
     private void Update()
     {
         switch (State)
