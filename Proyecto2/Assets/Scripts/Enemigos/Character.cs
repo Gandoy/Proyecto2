@@ -14,7 +14,25 @@ public class Character : MonoBehaviour {
     private float BlinkTime;
     [SerializeField]
     private Color DefaultC;
+    private int estadoDeBrazos;
+    private int estadoDePiernas;
 
+    public int EstadoDeBrazos()
+    {
+        return estadoDeBrazos;
+    }
+    public int EstadoDePiernas()
+    {
+        return estadoDePiernas;
+    }
+    public void CambiaEstadoDeBrazos(int Estado)
+    {
+        estadoDeBrazos = Estado;
+    }
+    public void CambiaEstadoDePiernas(int Estado)
+    {
+        estadoDePiernas = Estado;
+    }
 
     protected virtual void VisualQueue()
     {

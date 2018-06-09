@@ -38,24 +38,14 @@ public class Player : Character {
     [SerializeField]
     private float StoneCD;
     private float LastStone=0;
-    private int estadoDeBrazos;
-    private int estadoDePiernas;
-    public int EstadoDeBrazos()
-    {
-        return estadoDeBrazos;
-    }
-    public int EstadoDePiernas()
-    {
-        return estadoDePiernas;
-    }
-    public void CambiaEstadoDeBrazos(int Estado)
-    {
-        estadoDeBrazos = Estado;
-    }
-    public void CambiaEstadoDePiernas(int Estado)
-    {
-        estadoDePiernas = Estado;
-    }
+    [SerializeField]
+    private AnimatorScript AnimS;
+    [SerializeField]
+    private int EstadoDeBrazosAlSaltar;
+    [SerializeField]
+    private int EstadoDePiernasAlSaltar;
+    [SerializeField]
+    private int EstadoDePiernasAlCorrer;
     private void StopCJ()
     {
         ChrouchingJump = false;
@@ -99,7 +89,7 @@ public class Player : Character {
         if (Input.GetKeyDown(Jumpbutton) && Jumps > 0)
         {
             //aca para bajar plataformas
-            if (TakeJumpInput())
+            if (TakeSlideInput())
             {
                 gameObject.layer = AcrossPlatformsLayer;
                 ChrouchingJump = true;
@@ -110,6 +100,8 @@ public class Player : Character {
                 VerticalForce += JumpSpeed;
                 Jumps--;
                 gameObject.layer = AcrossPlatformsLayer;
+                AnimS.Refresh(EstadoDeBrazosAlSaltar, EstadoDePiernasAlSaltar);
+
             }
 
         }
@@ -125,10 +117,15 @@ public class Player : Character {
 
     private float TakeHorizontalInput()
     {
-        return Input.GetAxis("Horizontal");
+        float Dir = Input.GetAxis("Horizontal");
+        if(Dir!=0)
+        {
+            AnimS.Refresh(EstadoDePiernasAlCorrer);
+        }
+        return Dir;
     }
 
-    private bool TakeJumpInput()
+    private bool TakeSlideInput()
     {
         return Input.GetKey(Down);
     }
@@ -140,7 +137,7 @@ public class Player : Character {
     {
         LastStone = Time.time;
         Instantiate(Stone, StoneOriginPoint.position, StoneOriginPoint.rotation);
-        CambiaEstadoDeBrazos(1);
+        AnimS.PlayAnim("shoot");
     }
     void Update () {
         Physics();
