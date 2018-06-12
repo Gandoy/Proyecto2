@@ -1061,6 +1061,11 @@ Prefab:
       propertyPath: AnimS
       value: 
       objectReference: {fileID: 1182540453}
+    - target: {fileID: 114176589092233478, guid: 3b4057fdb29f56c4dbcb28f551826b57,
+        type: 2}
+      propertyPath: ShootAnim
+      value: Ataque
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114045322908956120, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}

@@ -8,6 +8,7 @@ public class AnimatorScript : MonoBehaviour {
  
     [SerializeField]
     private Animator Anim;
+    
 
     public void Refresh(int Arms, int Legs)
     {

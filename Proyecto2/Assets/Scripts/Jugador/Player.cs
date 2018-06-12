@@ -46,6 +46,8 @@ public class Player : Character {
     private int EstadoDePiernasAlSaltar;
     [SerializeField]
     private int EstadoDePiernasAlCorrer;
+    [SerializeField]
+    private string ShootAnim;
     private void StopCJ()
     {
         ChrouchingJump = false;
@@ -137,7 +139,7 @@ public class Player : Character {
     {
         LastStone = Time.time;
         Instantiate(Stone, StoneOriginPoint.position, StoneOriginPoint.rotation);
-        AnimS.PlayAnim("shoot");
+        AnimS.PlayAnim(ShootAnim);
     }
     void Update () {
         Physics();
