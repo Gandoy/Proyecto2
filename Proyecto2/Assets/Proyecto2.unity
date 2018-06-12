@@ -1060,7 +1060,7 @@ Prefab:
         type: 2}
       propertyPath: AnimS
       value: 
-      objectReference: {fileID: 853464541}
+      objectReference: {fileID: 1182540453}
     m_RemovedComponents:
     - {fileID: 114045322908956120, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
@@ -2487,8 +2487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HoldTime: 2
   Down: 274
-  CamLimit: {x: 0, y: -2, z: 0}
-  OriginalCamPos: {x: 13.83, y: 0.894, z: 0.688}
+  Shoot: 122
+  CamLimit: {x: 11.11, y: -5.894, z: 0.688}
+  OriginalCamPos: {x: 11.11, y: 0.894, z: 0.688}
+  Speed: 5
 --- !u!1 &849855912
 GameObject:
   m_ObjectHideFlags: 0
@@ -8498,6 +8500,27 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 106506097}
   m_Script: {fileID: 11500000, guid: dd2059444f890e6418a625d174bf3b29, type: 3}
+--- !u!1 &1182540452 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100040, guid: 55f85ad1f992a434cbaf19ec4f3cdc7d, type: 3}
+  m_PrefabInternal: {fileID: 1005353554}
+--- !u!114 &1182540453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182540452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936b29d0735282c41bf10d49562887a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 1182540454}
+--- !u!95 &1182540454 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 55f85ad1f992a434cbaf19ec4f3cdc7d,
+    type: 3}
+  m_PrefabInternal: {fileID: 1005353554}
 --- !u!1 &1197587543 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1988410441090614, guid: 3b4057fdb29f56c4dbcb28f551826b57,

@@ -9,38 +9,42 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField]
     private KeyCode Down;
     [SerializeField]
+    private KeyCode Shoot;
+    [SerializeField]
     private Vector3 CamLimit;
     [SerializeField]
     private Vector3 OriginalCamPos;
+    [SerializeField]
+    private float Speed;
 
     private void MoveCamUp()
     {
-       // transform.position = OriginalCamPos;
+        transform.localPosition = OriginalCamPos;
     }
     private void MoveCamDown()
     {
-        if (transform.position.y > CamLimit.y)
-            transform.Translate(0, -1 * Time.deltaTime, 0);
+        if (transform.localPosition.y > CamLimit.y)
+            transform.Translate(0, -1 * Time.deltaTime, 0,Space.Self);
         else
-            transform.position=CamLimit;
+            transform.localPosition=CamLimit;
     } 
 	void Update () {
-		if (Input.GetKey(Down))
+		if (Input.GetKey(Down)&&!Input.GetKey(Shoot))
         {
-            CurrentHold += 1 * Time.deltaTime;
+            CurrentHold += Speed * Time.deltaTime;
         }
         else
         {
             CurrentHold = 0;
-           /* if (transform.position!=OriginalCamPos)
+            if (transform.localPosition!=OriginalCamPos)
             {
                 Debug.Log("entroAUp");
                 MoveCamUp();
-                  }*/
+                  }
         }
         if (CurrentHold>HoldTime)
         {
-            //MoveCamDown();
+            MoveCamDown();
         }
 	}
 }
