@@ -40,12 +40,7 @@ public class Player : Character {
     private float LastStone=0;
     [SerializeField]
     private AnimatorScript AnimS;
-    [SerializeField]
-    private int EstadoDeBrazosAlSaltar;
-    [SerializeField]
-    private int EstadoDePiernasAlSaltar;
-    [SerializeField]
-    private int EstadoDePiernasAlCorrer;
+ 
     [SerializeField]
     private string ShootAnim;
     private void StopCJ()
@@ -85,6 +80,7 @@ public class Player : Character {
         {
             Jumps = MaxJumps;
             VerticalForce = 0;
+            AnimS.Refresh(false, "Salto");
         }
 
         Vector3 mov = Vector3.zero;
@@ -102,7 +98,7 @@ public class Player : Character {
                 VerticalForce += JumpSpeed;
                 Jumps--;
                 gameObject.layer = AcrossPlatformsLayer;
-                AnimS.Refresh(EstadoDeBrazosAlSaltar, EstadoDePiernasAlSaltar);
+                AnimS.Refresh(true,"Salto");
 
             }
 
@@ -120,10 +116,12 @@ public class Player : Character {
     private float TakeHorizontalInput()
     {
         float Dir = Input.GetAxis("Horizontal");
-        if(Dir!=0)
+        if (Dir != 0)
         {
-            AnimS.Refresh(EstadoDePiernasAlCorrer);
+            AnimS.Refresh(true, "Caminata");
         }
+        else
+            AnimS.Refresh(false, "Caminata");
         return Dir;
     }
 

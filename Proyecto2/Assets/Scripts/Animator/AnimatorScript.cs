@@ -10,15 +10,12 @@ public class AnimatorScript : MonoBehaviour {
     private Animator Anim;
     
 
-    public void Refresh(int Arms, int Legs)
+    public void Refresh(bool valor, string nombre)
     {
-        Anim.SetInteger("Arms", Arms);
-        Anim.SetInteger("Legs", Legs);
+        Debug.Log(nombre + valor.ToString());
+        Anim.SetBool(nombre, valor);
     }
-    public void Refresh(int Legs)
-    {
-        Anim.SetInteger("Legs", Legs);
-    }
+   
 	
 	public void PlayAnim(string anim)
     {
