@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1066,6 +1066,12 @@ Prefab:
       propertyPath: ShootAnim
       value: Ataque
       objectReference: {fileID: 0}
+    - target: {fileID: 114176589092233478, guid: 3b4057fdb29f56c4dbcb28f551826b57,
+        type: 2}
+      propertyPath: Stone
+      value: 
+      objectReference: {fileID: 1627688782501458, guid: 510c845a742aa0947a428e693cec1a5e,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114045322908956120, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3b4057fdb29f56c4dbcb28f551826b57, type: 2}
@@ -2067,7 +2073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f5ab3f36efb096849b21cc539d13afa1, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2300014, guid: f5ab3f36efb096849b21cc539d13afa1, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8210,7 +8216,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12268
+  m_Name: pb_Mesh12662
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -11459,7 +11465,7 @@ Transform:
   - {fileID: 888996039}
   - {fileID: 1288407553}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596927971
 GameObject:
@@ -14276,7 +14282,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12480
+  m_Name: pb_Mesh12676
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
