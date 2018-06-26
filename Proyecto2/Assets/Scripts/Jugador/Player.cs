@@ -29,7 +29,7 @@ public class Player : Character {
     [SerializeField]
     private KeyCode Shoot;
     [SerializeField]
-    private GameObject Stone;
+    private List<GameObject> Projectiles;
     [SerializeField]
     private Transform StoneOriginPoint;
     [SerializeField]
@@ -40,9 +40,15 @@ public class Player : Character {
     private float LastStone=0;
     [SerializeField]
     private AnimatorScript AnimS;
- 
     [SerializeField]
     private string ShootAnim;
+    private int CurrentWeapon = 1;
+
+    public void TakeAnyInput(int I)
+    {
+        if (I < 4) SwitchWeapon(I);
+    }
+
     private void StopCJ()
     {
         ChrouchingJump = false;
@@ -54,6 +60,10 @@ public class Player : Character {
         if (here > transform.position.z)
             return -1;   
         return 1;
+    }
+    public void SwitchWeapon(int W)
+    {
+        CurrentWeapon = W;
     }
     protected override void StuffToDoOnAwake()
     {
@@ -136,7 +146,8 @@ public class Player : Character {
     private void DoTheShooting()
     {
         LastStone = Time.time;
-        Instantiate(Stone, StoneOriginPoint.position, StoneOriginPoint.rotation);
+        Instantiate(Projectiles[CurrentWeapon], StoneOriginPoint.position, StoneOriginPoint.rotation);
+
         AnimS.PlayAnim(ShootAnim);
     }
     void Update () {
