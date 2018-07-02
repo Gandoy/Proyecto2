@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character {
-
+    [SerializeField]
+    private int BaseHP;
     [SerializeField]
     private float HorizontalSpeed;
     private CharacterController CC;
@@ -47,6 +48,10 @@ public class Player : Character {
     public void TakeAnyInput(int I)
     {
         if (I < 4) SwitchWeapon(I);
+    }
+    public void SetMaxHP(int value)
+    {
+        MaxHP = BaseHP + value;
     }
 
     private void StopCJ()

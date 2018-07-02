@@ -7,11 +7,21 @@ public class FlynnInput : MonoBehaviour {
     private List<KeyCode> Weapons;
     [SerializeField]
     private Player P;
+    //esto esta para testear nomas, despues hay que hacerlo con un boton de la interfaz;
+    [SerializeField]
+    private KeyCode SaveB;
+    public void PressedAKey(int I)
+    {
+        P.TakeAnyInput(I);
+    }
     private void Update()
     {
+        
         if (Input.anyKey)
         {
-            for (int K=0; K < Weapons.Count;K++)
+            if (Input.GetKeyDown(SaveB))
+                PowerUpController.instance.Save();
+                for (int K=0; K < Weapons.Count;K++)
             {
                 if (Input.GetKeyDown(Weapons[K]))
                 {
@@ -23,4 +33,5 @@ public class FlynnInput : MonoBehaviour {
             
         }
     }
+    
 }
