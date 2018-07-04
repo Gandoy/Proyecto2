@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114608090896618168}
   - component: {fileID: 114373406105059186}
   - component: {fileID: 54948782344884390}
+  - component: {fileID: 114555266127237486}
   m_Layer: 14
   m_Name: TomaHawk
   m_TagString: Untagged
@@ -174,6 +175,17 @@ MonoBehaviour:
   Force: {x: 0, y: 30, z: 9}
   Gravity: -2
   MaxFallSpeed: -50
+--- !u!114 &114555266127237486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793868868457654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f9dc871004f884888d19af1536efcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114608090896618168
 MonoBehaviour:
   m_ObjectHideFlags: 1

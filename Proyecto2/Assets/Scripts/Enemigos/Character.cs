@@ -14,7 +14,7 @@ public class Character : MonoBehaviour {
     private float BlinkTime;
    // [SerializeField]
    // private Color DefaultC;
-    private int estadoDeBrazos;
+   /* private int estadoDeBrazos;
     private int estadoDePiernas;
 
     public int EstadoDeBrazos()
@@ -33,7 +33,7 @@ public class Character : MonoBehaviour {
     {
         estadoDePiernas = Estado;
     }
-
+    */
     protected virtual void VisualQueue()
     {
        // GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), Color.white);
