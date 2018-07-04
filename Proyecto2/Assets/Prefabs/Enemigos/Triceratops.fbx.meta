@@ -130,7 +130,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Choque
       takeName: Armature|ArmatureAction.001
-      firstFrame: 125
+      firstFrame: 120
       lastFrame: 181
       wrapMode: 0
       orientationOffsetY: 0

@@ -3,49 +3,60 @@ guid: 3e4e60025b6e0804ca5e663c53971637
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.001
-    100004: Cube.002
-    100006: Cube.003
-    100008: Cube.004
-    100010: Cube.005
-    100012: //RootNode
-    100014: Cube.000
-    400000: Cube
-    400002: Cube.001
-    400004: Cube.002
-    400006: Cube.003
-    400008: Cube.004
-    400010: Cube.005
-    400012: //RootNode
-    400014: Cube.000
-    2100000: Material
-    2100002: Material.001
-    2100004: Material.002
-    2100006: No Name
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.002
-    2300006: Cube.003
-    2300008: Cube.004
-    2300010: Cube.005
-    2300012: //RootNode
-    2300014: Cube.000
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.002
-    3300006: Cube.003
-    3300008: Cube.004
-    3300010: Cube.005
-    3300012: //RootNode
-    3300014: Cube.000
-    4300000: Cube.003
-    4300002: Cube.002
-    4300004: Cube.001
-    4300006: Cube
-    4300008: Cube.004
-    4300010: Cube.005
-    4300012: Cube.000
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_L
+    100008: Bone.001_L.001
+    100010: Bone.001_L.002
+    100012: Bone.001_L.002_end
+    100014: Bone.001_R
+    100016: Bone.001_R.001
+    100018: Bone.001_R.002
+    100020: Bone.001_R.002_end
+    100022: Bone.002
+    100024: Bone.003
+    100026: Bone.003_end
+    100028: Bone_L
+    100030: Bone_L.001
+    100032: Bone_L.001_end
+    100034: Bone_R
+    100036: Bone_R.001
+    100038: Bone_R.001_end
+    100040: Cube.000
+    100042: Cube.003
+    100044: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_L
+    400008: Bone.001_L.001
+    400010: Bone.001_L.002
+    400012: Bone.001_L.002_end
+    400014: Bone.001_R
+    400016: Bone.001_R.001
+    400018: Bone.001_R.002
+    400020: Bone.001_R.002_end
+    400022: Bone.002
+    400024: Bone.003
+    400026: Bone.003_end
+    400028: Bone_L
+    400030: Bone_L.001
+    400032: Bone_L.001_end
+    400034: Bone_R
+    400036: Bone_R.001
+    400038: Bone_R.001_end
+    400040: Cube.000
+    400042: Cube.003
+    400044: //RootNode
+    2100000: No Name
+    4300000: Cube.000
+    4300002: Cube.003
+    7400000: Tirar
+    7400002: Volar
+    9500000: //RootNode
+    13700000: Cube.000
+    13700002: Cube.003
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -73,7 +84,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Tirar
+      takeName: Armature|ArmatureAction.001
+      firstFrame: 50
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Volar
+      takeName: Armature|ArmatureAction.001
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -121,7 +188,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
