@@ -12,8 +12,8 @@ public class Character : MonoBehaviour {
     protected int HP;
     [SerializeField]
     private float BlinkTime;
-    [SerializeField]
-    private Color DefaultC;
+   // [SerializeField]
+   // private Color DefaultC;
     private int estadoDeBrazos;
     private int estadoDePiernas;
 
@@ -36,12 +36,12 @@ public class Character : MonoBehaviour {
 
     protected virtual void VisualQueue()
     {
-        GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), Color.white);
-        Invoke("BackToDefaultMat", BlinkTime);
+       // GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), Color.white);
+        //Invoke("BackToDefaultMat", BlinkTime);
     }
     private void BackToDefaultMat()
     {
-        GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), DefaultC);
+      //  GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), DefaultC);
     }
 
     public virtual void  GetDamaged(int Damage)

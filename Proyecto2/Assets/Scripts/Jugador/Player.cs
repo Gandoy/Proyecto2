@@ -35,6 +35,8 @@ public class Player : Character {
     private Transform StoneOriginPoint;
     [SerializeField]
     private float MinDistToStopForEnemies;
+    [SerializeField]
+    private float MinVDistToStopForEnemies;
     public static Player PlayerSingleton;
     [SerializeField]
     private float StoneCD;
@@ -43,7 +45,25 @@ public class Player : Character {
     private AnimatorScript AnimS;
     [SerializeField]
     private string ShootAnim;
+    [SerializeField]
+    private float InvuAfterDmg;
+    private bool IsHittable = true;
     private int CurrentWeapon = 1;
+
+    public override void GetDamaged(int Damage)
+    {
+        if (IsHittable)
+        {
+            HP -= Damage;
+            IsHittable = false;
+            Invoke("StopBeingImmune", InvuAfterDmg);
+        }
+        
+    }
+    private void StopBeingImmune()
+    {
+        IsHittable = true;
+    }
 
     public void TakeAnyInput(int I)
     {
@@ -64,6 +84,14 @@ public class Player : Character {
             return 0;
         if (here > transform.position.z)
             return -1;   
+        return 1;
+    }
+    public int UpOrDown(float here)
+    {
+        if (Mathf.Abs(here - transform.position.y) < MinVDistToStopForEnemies)
+            return 0;
+        if (here > transform.position.y)
+            return -1;
         return 1;
     }
     public void SwitchWeapon(int W)

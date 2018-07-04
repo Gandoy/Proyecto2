@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +8,17 @@ public class FlynnInput : MonoBehaviour {
     private List<KeyCode> Weapons;
     [SerializeField]
     private Player P;
+    [SerializeField]
+    RotateModel Rotator;
     //esto esta para testear nomas, despues hay que hacerlo con un boton de la interfaz;
     [SerializeField]
     private KeyCode SaveB;
+    [SerializeField]
+    private KeyCode Left;
+    [SerializeField]
+    private KeyCode Right;
+
+
     public void PressedAKey(int I)
     {
         P.TakeAnyInput(I);
@@ -27,11 +36,13 @@ public class FlynnInput : MonoBehaviour {
                 {
                     Debug.Log("entroCambioDeArma");
                     P.TakeAnyInput(K);
-                }
-                   
+                }  
             }
-            
+            if (Input.GetKeyDown(Left))
+                Rotator.turnleft();
+            if (Input.GetKeyDown(Right))
+                Rotator.turnright();
+               
         }
     }
-    
 }

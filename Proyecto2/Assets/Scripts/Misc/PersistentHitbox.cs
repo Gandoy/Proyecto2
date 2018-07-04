@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbox : MonoBehaviour {
+public class PersistentHitbox : MonoBehaviour {
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Hurtbox Damaged;
         Damaged = other.GetComponent<Hurtbox>();
         Damaged.GetHit(1);
-        Destroy(gameObject);
+
     }
-    
 }
