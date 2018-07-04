@@ -40,10 +40,11 @@ public class PowerUpController : MonoBehaviour {
     {
         if (instance==null)
         {
-            Apply();
+            
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             Load();
+            Apply();
         }
         else
         {
