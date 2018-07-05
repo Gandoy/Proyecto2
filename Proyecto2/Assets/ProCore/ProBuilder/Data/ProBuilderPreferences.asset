@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Int_values: 0100000002000000010000000000000000040000
   m_Float_values:
   - 0
-  - 525
+  - 0
   - 1.11
   m_String_values:
   - RGBA(0.000, 1.000, 0.000, 1.000)
