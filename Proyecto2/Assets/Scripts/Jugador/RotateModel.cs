@@ -15,5 +15,9 @@ public class RotateModel : MonoBehaviour {
     {
         transform.rotation = Quaternion.Euler(RR);
     }
+    public void turnTowards(Vector3 Here)
+    {
+        transform.LookAt(Here);
+    }
 	
 }

@@ -86,6 +86,10 @@ public class Player : Character {
             return -1;   
         return 1;
     }
+    public float ExactLeftOrRIght(float here)
+    {
+        return transform.position.z - here;
+    }
     public int UpOrDown(float here)
     {
         if (Mathf.Abs(here - transform.position.y) < MinVDistToStopForEnemies)
