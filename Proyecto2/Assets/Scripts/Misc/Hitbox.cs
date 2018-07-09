@@ -9,7 +9,7 @@ public class Hitbox : MonoBehaviour {
         Hurtbox Damaged;
         Damaged = other.GetComponent<Hurtbox>();
         Damaged.GetHit(1);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
     
 }
