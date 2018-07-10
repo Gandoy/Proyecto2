@@ -27,16 +27,24 @@ public class Triceratops : Character {
     private float Unstuntime;
     [SerializeField]
     private Transform RaycastEmitter;
+    private Animator anim;
+    [SerializeField]
+    private float Accel;
+    [SerializeField]
+    private float MaxSpeed;
 
     void Start () {
 
         CC = GetComponent<CharacterController>();
         PS = Player.PlayerSingleton;
+        anim = GetComponent<Animator>();
     }
     public void Getstunned()
     {
+        anim.SetBool("Charge", false);
         State = 3;
         Unstuntime = Time.time + StunTime;
+        HorizontalSpeed = 0;
     }
 	void Update () {
 		switch(State)
@@ -61,12 +69,17 @@ public class Triceratops : Character {
                     //preparandose para chargear;
                     break;
                 }
+                
 
         }
-	}
+        Vector3 movement = transform.forward * HorizontalSpeed;
+        movement += new Vector3(0, Gravity, 0);
+        CC.Move(movement * Time.deltaTime);
+    }
    private void Charge()
     {
-        CC.Move(transform.forward * HorizontalSpeed * Time.deltaTime);
+        if(HorizontalSpeed<MaxSpeed)
+        HorizontalSpeed += Accel * Time.deltaTime;
     }
     private void StandBy()
     {
@@ -82,7 +95,7 @@ public class Triceratops : Character {
 
     private void Stun()
     {
-        if (Time.time>Unstuntime)
+        if (Time.time > Unstuntime)
         {
             transform.Rotate(0, 180, 0);
             State = 2;
@@ -90,7 +103,12 @@ public class Triceratops : Character {
     }
     private void ReadyForCharge()
     {
+        anim.SetBool("Charge", true);
         State = 1;
         Stunner.SetActive(true);
+    }
+    protected override void Death()
+    {
+        Destroy(gameObject);
     }
 }

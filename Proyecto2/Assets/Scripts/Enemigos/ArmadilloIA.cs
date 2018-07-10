@@ -100,6 +100,9 @@ public class ArmadilloIA : Character {
         Vector3 mov = Vector3.zero;
         mov += Vector3.down * -VerticalForce;
         mov += Front * HorizontalDir *HorizontalSpeed;
+        //gravedad
+        if (!CC.isGrounded)
+        mov += new Vector3(0, Gravity, 0);
         CC.Move(mov * Time.deltaTime);
     }
 }
