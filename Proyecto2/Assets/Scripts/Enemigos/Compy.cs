@@ -14,6 +14,7 @@ public class Compy : Character {
     [SerializeField]
     private float Gravity;
     private CharacterController CC;
+    private int direction=0;
     private void Start()
     {
         CC = GetComponent<CharacterController>();
@@ -21,8 +22,9 @@ public class Compy : Character {
 
     private void Update()
     {
-        Phy(Player.PlayerSingleton.LeftOrRightFrom(transform.position.z));
+        Phy(direction);
     }
+    
 
     private void Phy(int HorizontalDir)
     {
@@ -40,7 +42,11 @@ public class Compy : Character {
         if (!CC.isGrounded)
             VerticalForce += Gravity * Time.deltaTime;
         else
-            VerticalForce += JumpPower;
+        {
+            direction = Player.PlayerSingleton.LeftOrRightFrom(transform.position.z);
+                VerticalForce = JumpPower;
+        }
+            
         mov += Vector3.down * -VerticalForce;
         mov += Front * HorizontalDir * HorizontalSpeed;
         CC.Move(mov * Time.deltaTime);

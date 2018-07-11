@@ -3826,8 +3826,8 @@ MonoBehaviour:
   HP: 1
   BlinkTime: 0
   Rotator: {fileID: 1618852646}
-  HorizontalSpeed: 10
-  JumpPower: 20
+  HorizontalSpeed: 4
+  JumpPower: 17
   Gravity: -30
 --- !u!4 &1852388765
 Transform:
