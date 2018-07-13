@@ -6,32 +6,32 @@ public class Triceratops : Character {
 
 
     [SerializeField]
-    private int State=2;
+    protected int State=2;
     [SerializeField]
-    private float Gravity;
-    private float VerticalForce;
+    protected float Gravity;
+    protected float VerticalForce;
     [SerializeField]
-    private float HorizontalSpeed;
-    private CharacterController CC;
-    private Player PS;
+    protected float HorizontalSpeed;
+    protected CharacterController CC;
+    protected Player PS;
     [SerializeField]
-    private float SightRange;
+    protected float SightRange;
     [SerializeField]
-    private LayerMask Layers;
+    protected LayerMask Layers;
     [SerializeField]
-    private float ChargeDelay;
+    protected float ChargeDelay;
     [SerializeField]
-    private GameObject Stunner;
+    protected GameObject Stunner;
     [SerializeField]
-    private float StunTime;
-    private float Unstuntime;
+    protected float StunTime;
+    protected float Unstuntime;
     [SerializeField]
-    private Transform RaycastEmitter;
-    private Animator anim;
+    protected Transform RaycastEmitter;
+    protected Animator anim;
     [SerializeField]
-    private float Accel;
+    protected float Accel;
     [SerializeField]
-    private float MaxSpeed;
+    protected float MaxSpeed;
 
     void Start () {
 
@@ -76,12 +76,12 @@ public class Triceratops : Character {
         movement += new Vector3(0, Gravity, 0);
         CC.Move(movement * Time.deltaTime);
     }
-   private void Charge()
+   protected void Charge()
     {
         if(HorizontalSpeed<MaxSpeed)
         HorizontalSpeed += Accel * Time.deltaTime;
     }
-    private void StandBy()
+    protected virtual void StandBy()
     {
        
         Ray R= new Ray(RaycastEmitter.position,RaycastEmitter.forward);
@@ -101,7 +101,7 @@ public class Triceratops : Character {
             State = 2;
         }
     }
-    private void ReadyForCharge()
+   protected virtual void ReadyForCharge()
     {
         anim.SetBool("Charge", true);
         State = 1;

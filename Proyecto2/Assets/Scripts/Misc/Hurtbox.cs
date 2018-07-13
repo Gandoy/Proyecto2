@@ -6,7 +6,7 @@ public class Hurtbox : MonoBehaviour {
     [SerializeField]
     private Character Char;
 
-  public void GetHit(int damage)
+  public virtual void GetHit(int damage)
     {
        // Debug.Log("entroGetHit");
         Char.GetDamaged(damage);
