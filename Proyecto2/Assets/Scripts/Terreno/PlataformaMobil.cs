@@ -13,7 +13,8 @@ public class PlataformaMobil : MonoBehaviour {
     [SerializeField]
     private float PauseTime;
     private float LastPause;
-
+    [SerializeField]
+    MurcielagoC M;
 	
 	void Update () {
         if(LastPause<Time.time)
@@ -24,6 +25,10 @@ public class PlataformaMobil : MonoBehaviour {
             CurrentWaypoint++;
             CurrentWaypoint = CurrentWaypoint % Waypoints.Count; //aritmetica modular vieja
             LastPause = Time.time + PauseTime;
+            if (M!=null)
+            {
+                M.Rotate();
+            }
            
         }
     }

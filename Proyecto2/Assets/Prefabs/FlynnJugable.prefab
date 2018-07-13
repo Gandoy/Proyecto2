@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4063427335461228}
   - component: {fileID: 65510944998068518}
   - component: {fileID: 114594474671732062}
+  - component: {fileID: 54784847602595994}
   m_Layer: 12
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -937,7 +938,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984959812154968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5300002, y: 1.73, z: 123.01}
+  m_LocalPosition: {x: 4, y: 16.47, z: 71.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4217194940930412}
@@ -1255,7 +1256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911826820491360}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 11.11, y: 0.894, z: 0.688}
+  m_LocalPosition: {x: 14.2, y: 0.894, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4282938671070658}
@@ -1447,6 +1448,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984959812154968}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54784847602595994
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037217714932280}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65510944998068518
 BoxCollider:
   m_ObjectHideFlags: 1
