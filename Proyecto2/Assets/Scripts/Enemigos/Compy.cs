@@ -15,6 +15,12 @@ public class Compy : Character {
     private float Gravity;
     private CharacterController CC;
     private int direction=0;
+
+    protected override void Death()
+    {
+        Destroy(gameObject);
+    }
+
     private void Start()
     {
         CC = GetComponent<CharacterController>();
