@@ -49,6 +49,10 @@ public class Player : Character {
     private float InvuAfterDmg;
     private bool IsHittable = true;
     private int CurrentWeapon = 1;
+    private bool WallJump = true;
+    private bool UsedWJ = false;
+    [SerializeField]
+    private bool Wall = false;
 
     public override void GetDamaged(int Damage)
     {
@@ -128,28 +132,42 @@ public class Player : Character {
             Jumps = MaxJumps;
             VerticalForce = 0;
             AnimS.Refresh(false, "Salto");
+            UsedWJ = false;
         }
 
         Vector3 mov = Vector3.zero;
-        if (Input.GetKeyDown(Jumpbutton) && Jumps > 0)
+        if (Input.GetKeyDown(Jumpbutton))
+            
         {
-            //aca para bajar plataformas
-            if (TakeSlideInput())
+            if (Jumps > 0)
             {
-                gameObject.layer = AcrossPlatformsLayer;
-                ChrouchingJump = true;
-                Invoke("StopCJ", CJDuration);
+                //aca para bajar plataformas
+                if (TakeSlideInput())
+                {
+                    gameObject.layer = AcrossPlatformsLayer;
+                    ChrouchingJump = true;
+                    Invoke("StopCJ", CJDuration);
+                }
+                else
+                {
+                    VerticalForce += JumpSpeed;
+                    Jumps--;
+                    gameObject.layer = AcrossPlatformsLayer;
+                    AnimS.Refresh(true, "Salto");
+                }
             }
-            else
+            else if (WallJump&&Wall&&!UsedWJ)
             {
-                VerticalForce += JumpSpeed;
-                Jumps--;
-                gameObject.layer = AcrossPlatformsLayer;
-                AnimS.Refresh(true,"Salto");
 
+                VerticalForce = JumpSpeed;
+                gameObject.layer = AcrossPlatformsLayer;
+                AnimS.Refresh(true, "Salto");
+                UsedWJ = true;
             }
+           
 
         }
+
         VerticalForce -= Gravity;
         if (VerticalForce <= 0 && !ChrouchingJump)
         {
@@ -191,4 +209,12 @@ public class Player : Character {
         Physics();
         if (TakeShootInput()&&Time.time>LastStone+StoneCD) DoTheShooting();
     }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (!CC.isGrounded)
+            Wall = true;
+        else
+            Wall = false;
+    }
+    
 }
