@@ -1,20 +1,27 @@
 fileFormatVersion: 2
-guid: 01da08c5c495bef49bfa4aca1423841f
+guid: 67cf5277ed4f6f0418815d7fd8a722ba
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: NivelesQA_mergedObject
+    100004: Plane_0
     400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane.003
+    400002: NivelesQA_mergedObject
+    400004: Plane_0
+    2100000: Nivel1-2
+    2300000: NivelesQA_mergedObject
+    2300002: Plane_0
+    3300000: NivelesQA_mergedObject
+    3300002: Plane_0
+    4300000: NivelesQA_mergedObject
+    4300002: Plane_0
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: b8d6869ee9c6dc041967136afae1b170, type: 2}
+      name: Nivel1-2
+    second: {fileID: 2100000, guid: 5216ea894aa87874e992d8619743ae04, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
