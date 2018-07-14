@@ -4,34 +4,38 @@ using UnityEngine;
 
 public class ArmadilloIA : Character {
     [SerializeField]
-    private int State;
+    protected int State;
     [SerializeField]
-    private float Gravity;
-    private float VerticalForce;
+    protected float Gravity;
+    protected float VerticalForce;
     [SerializeField]
-    private float HorizontalSpeed;
-    private CharacterController CC;
-    private Player PS;
+    protected float HorizontalSpeed;
+    protected CharacterController CC;
+    protected Player PS;
     [SerializeField]
-    private float SwitchToBallCD;
-    private float LastSwitch;
+    protected float SwitchToBallCD;
+    protected float LastSwitch;
     [SerializeField]
-    private float QuitRollingCD;
+    protected float QuitRollingCD;
     [SerializeField]
-    private GameObject AnimContainer;
+    protected GameObject AnimContainer;
     [SerializeField]
     private RotateModel Rotator;
+    protected int D;
 
 
-
-    private Animator anim;
+    protected Animator anim;
     
 
-    private void ChangeState (int S)
+    protected void ChangeState (int S)
     {
         State = S;
         if (S == 1)
+        {
             anim.SetBool("Spinning", true);
+            D = PS.LeftOrRightFrom(transform.position.z);
+        }
+           
         else
             anim.SetBool("Spinning", false);
     }
@@ -76,7 +80,7 @@ public class ArmadilloIA : Character {
                     }
                         
                     //aca hacelo girar
-                    Phy(PS.LeftOrRightFrom(transform.position.z));
+                    Phy(D);
                     break;
                 }
             case 2:
@@ -89,7 +93,7 @@ public class ArmadilloIA : Character {
                 }
         }
     }
-    private void Phy(int HorizontalDir)
+    protected void Phy(int HorizontalDir)
     {
         if (HorizontalDir==1)
         {
