@@ -263,26 +263,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 143198301834882954, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 2}
-      propertyPath: m_SlopeLimit
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 2}
-      propertyPath: slopeLimit
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 2}
-      propertyPath: slideFriction
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 2}
-      propertyPath: slideMultiplier
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df5c0a74d3510594f96982dbbbe422ec, type: 2}
   m_IsPrefabParent: 0
