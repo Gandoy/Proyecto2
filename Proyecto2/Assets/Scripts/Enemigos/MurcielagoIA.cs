@@ -19,6 +19,7 @@ public class MurcielagoIA : Character {
 
     protected override void Death()
     {
+        if(BatController.instance!=null)
         BatController.instance.BatDie();
         Destroy(gameObject);
     }
