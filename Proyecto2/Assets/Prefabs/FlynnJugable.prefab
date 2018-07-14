@@ -660,7 +660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1934599722748754
 GameObject:
   m_ObjectHideFlags: 1
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 136702668795147590}
   - component: {fileID: 143198301834882954}
   - component: {fileID: 114407444885545616}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: FlynnJugable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984959812154968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.182972, y: 11.64, z: -1.9277065}
+  m_LocalPosition: {x: 5.83, y: 1.47, z: 14.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4217194940930412}
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   JumpSpeed: 40
   MaxJumps: 1
   Jumpbutton: 32
-  DefaultLayer: 9
+  DefaultLayer: 18
   AcrossPlatformsLayer: 11
   Down: 274
   CJDuration: 0.2

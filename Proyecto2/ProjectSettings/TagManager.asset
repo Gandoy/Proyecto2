@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - GoThroughPlatform
-  - Player
+  - Creatures
   - RegularTerrain
   - PlayerThroughTerrain
   - hurtbox
@@ -22,8 +22,8 @@ TagManager:
   - projectile
   - Ehitbox
   - Ehurtbox
-  - 
-  - 
+  - Iwall
+  - Player2
   - 
   - 
   - 
