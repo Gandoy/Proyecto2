@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlataformaMobil : MonoBehaviour {
 
     [SerializeField]
-    private List<Transform> Waypoints;
+    protected List<Transform> Waypoints;
     [SerializeField]
-    private int CurrentWaypoint;
+    protected int CurrentWaypoint;
     [SerializeField]
-    private float speed;
+    protected float speed;
     [SerializeField]
-    private float PauseTime;
-    private float LastPause;
+    protected float PauseTime;
+    protected float LastPause;
     [SerializeField]
-    MurcielagoC M;
+    protected MurcielagoC M;
 	
 	void Update () {
         if(LastPause<Time.time)

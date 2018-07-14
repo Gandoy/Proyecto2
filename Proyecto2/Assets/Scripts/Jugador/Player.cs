@@ -53,6 +53,16 @@ public class Player : Character {
     private bool UsedWJ = false;
     [SerializeField]
     private bool Wall = false;
+    private Vector3 hitNormal;
+    [SerializeField]
+    private float slopeLimit;
+    [SerializeField]
+    private float slideFriction;
+    private bool isGrounded;
+    [SerializeField]
+    private float slideMultiplier;
+    [SerializeField]
+    private bool ApplySlide;
 
     public override void GetDamaged(int Damage)
     {
@@ -175,7 +185,13 @@ public class Player : Character {
         }
         mov += Vector3.down * -VerticalForce;
         mov += Front * TakeHorizontalInput() * HorizontalSpeed;
+        if (!isGrounded&&ApplySlide)
+        {
+            mov.z += (1f - hitNormal.y) * hitNormal.z * (1f - slideFriction)*slideMultiplier;
+        }
         CC.Move(mov * Time.deltaTime);
+        isGrounded = (Vector3.Angle(Vector3.up, hitNormal) <= slopeLimit);
+       
     }
 
     private float TakeHorizontalInput()
@@ -215,6 +231,8 @@ public class Player : Character {
             Wall = true;
         else
             Wall = false;
+        hitNormal = hit.normal;
     }
-    
+  
+
 }

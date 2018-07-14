@@ -2,26 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MurcielagoIA : Character {
+public class PteBoss : MurcielagoIA {
 
-    protected CharacterController CC;
-    protected Player PS;
     [SerializeField]
-    protected List<Transform> Waypoints;
-    protected int CurrentWaypoint;
+    private List<float> Speeds;
     [SerializeField]
-    protected float speed;
+    private List<PlataformaBoss3> Plats;
     [SerializeField]
-    protected RotateModel Rotator;
-    protected float LastPause;
-    [SerializeField]
-    protected float PauseTime;
-
-    protected override void Death()
-    {
-        Destroy(gameObject);
-    }
-
+    private List<int> PlatTargets;
     private void Update()
     {
         if (LastPause < Time.time)
@@ -31,8 +19,12 @@ public class MurcielagoIA : Character {
             transform.position = Waypoints[CurrentWaypoint].position;
             CurrentWaypoint++;
             CurrentWaypoint = CurrentWaypoint % Waypoints.Count; //aritmetica modular vieja
+            speed = Speeds[CurrentWaypoint];
+            if (Plats[CurrentWaypoint] != null) 
+            Plats[CurrentWaypoint].Mov(PlatTargets[CurrentWaypoint]);
+         
             LastPause = Time.time + PauseTime;
-            Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
+            //Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
 
         }
     }

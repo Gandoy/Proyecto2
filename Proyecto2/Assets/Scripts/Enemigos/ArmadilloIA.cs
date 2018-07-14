@@ -21,7 +21,9 @@ public class ArmadilloIA : Character {
     private GameObject AnimContainer;
     [SerializeField]
     private RotateModel Rotator;
-    
+
+
+
     private Animator anim;
     
 
@@ -104,6 +106,9 @@ public class ArmadilloIA : Character {
         if (!CC.isGrounded)
         mov += new Vector3(0, Gravity, 0);
         CC.Move(mov * Time.deltaTime);
+      
+
     }
+    
 }
 

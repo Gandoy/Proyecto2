@@ -412,7 +412,7 @@ MonoBehaviour:
   MaxHP: 0
   HP: 0
   BlinkTime: 0
-  JumpPower: 10
+  JumpPower: 12
   Gravity: 20
   Target: {fileID: 1668759164}
   LeftC: {fileID: 549240314}
@@ -1913,7 +1913,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524916925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.57, y: 1.12, z: 33.6}
+  m_LocalPosition: {x: 3.57, y: 1.12, z: 35.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1999,7 +1999,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 549240313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.57, y: 1.12, z: 8.91}
+  m_LocalPosition: {x: 3.57, y: 1.12, z: 6.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6481,7 +6481,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1991981255}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 32.58, y: 5.28, z: 20.92}
+  m_LocalPosition: {x: 39.05, y: 5.28, z: 20.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
