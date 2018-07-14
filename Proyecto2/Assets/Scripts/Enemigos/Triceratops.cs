@@ -39,7 +39,7 @@ public class Triceratops : Character {
         PS = Player.PlayerSingleton;
         anim = GetComponent<Animator>();
     }
-    public void Getstunned()
+    public virtual void Getstunned()
     {
         anim.SetBool("Charge", false);
         State = 3;
@@ -76,7 +76,7 @@ public class Triceratops : Character {
         movement += new Vector3(0, Gravity, 0);
         CC.Move(movement * Time.deltaTime);
     }
-   protected void Charge()
+   protected virtual void Charge()
     {
         if(HorizontalSpeed<MaxSpeed)
         HorizontalSpeed += Accel * Time.deltaTime;

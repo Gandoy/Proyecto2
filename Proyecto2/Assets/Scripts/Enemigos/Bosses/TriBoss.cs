@@ -5,18 +5,18 @@ using UnityEngine;
 public class TriBoss : Triceratops {
 
     [SerializeField]
-    private List<Transform> PlacesToTeleport;
+    protected List<Transform> PlacesToTeleport;
     [SerializeField]
-    private float TimeBeforeWalk;
+    protected float TimeBeforeWalk;
     [SerializeField]
-    private float WalkSpeed;
+    protected float WalkSpeed;
     [SerializeField]
-    private float WalkTime;
+    protected float WalkTime;
     [SerializeField]
-    private float TimeBeforeCharge;
+    protected float TimeBeforeCharge;
 
 
-    public void TeleportTo(int index)
+    public virtual void TeleportTo(int index)
     {
         State = 2;
         GetWalking();
