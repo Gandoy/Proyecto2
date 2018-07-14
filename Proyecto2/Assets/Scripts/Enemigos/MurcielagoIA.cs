@@ -6,9 +6,9 @@ public class MurcielagoIA : Character {
 
     protected CharacterController CC;
     protected Player PS;
-    [SerializeField]
-    protected List<Transform> Waypoints;
-    protected int CurrentWaypoint;
+
+    public List<Transform> Waypoints;
+    public int CurrentWaypoint;
     [SerializeField]
     protected float speed;
     [SerializeField]
@@ -19,6 +19,7 @@ public class MurcielagoIA : Character {
 
     protected override void Death()
     {
+        BatController.instance.BatDie();
         Destroy(gameObject);
     }
 
@@ -29,8 +30,9 @@ public class MurcielagoIA : Character {
         if (Vector3.Distance(transform.position, Waypoints[CurrentWaypoint].position) < speed * Time.deltaTime)
         {
             transform.position = Waypoints[CurrentWaypoint].position;
-            CurrentWaypoint++;
-            CurrentWaypoint = CurrentWaypoint % Waypoints.Count; //aritmetica modular vieja
+            CurrentWaypoint--;
+            if (CurrentWaypoint < 0)
+                CurrentWaypoint = Waypoints.Count -1;
             LastPause = Time.time + PauseTime;
             Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
 

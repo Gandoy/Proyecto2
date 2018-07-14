@@ -28,4 +28,8 @@ public class PteBoss : MurcielagoIA {
 
         }
     }
+    protected override void Death()
+    {
+        Destroy(gameObject);
+    }
 }
