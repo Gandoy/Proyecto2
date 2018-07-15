@@ -17,7 +17,8 @@ public class FlynnInput : MonoBehaviour {
     private KeyCode Left;
     [SerializeField]
     private KeyCode Right;
-
+    private bool LeftDown;
+    private bool RightDown;
 
     public void PressedAKey(int I)
     {
@@ -38,11 +39,20 @@ public class FlynnInput : MonoBehaviour {
                     P.TakeAnyInput(K);
                 }  
             }
-            if (Input.GetKeyDown(Left))
+            if (Input.GetKeyDown(Left)||LeftDown)
                 Rotator.turnleft();
-            if (Input.GetKeyDown(Right))
+            if (Input.GetKeyDown(Right)||RightDown)
                 Rotator.turnright();
                
         }
+    }
+    public void LD()
+    {
+        Debug.Log("heyheyhey");
+        LeftDown = true;
+    }
+    public void LR()
+    {
+        LeftDown = false;
     }
 }
