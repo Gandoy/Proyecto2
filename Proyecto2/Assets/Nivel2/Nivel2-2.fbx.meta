@@ -12,6 +12,10 @@ ModelImporter:
     100012: Cylinder.003
     100014: //RootNode
     100016: Plane.002
+    100018: Plane.000
+    100020: Cube.003
+    100022: Cube.005
+    100024: Plane.001
     400000: Cube
     400002: Cube.001
     400004: Cube.002
@@ -21,6 +25,10 @@ ModelImporter:
     400012: Cylinder.003
     400014: //RootNode
     400016: Plane.002
+    400018: Plane.000
+    400020: Cube.003
+    400022: Cube.005
+    400024: Plane.001
     2100000: No Name
     2100002: Default_Prototype
     2300000: Cube
@@ -31,6 +39,10 @@ ModelImporter:
     2300010: Cylinder.002
     2300012: Cylinder.003
     2300014: Plane.002
+    2300016: Plane.000
+    2300018: Cube.003
+    2300020: Cube.005
+    2300022: Plane.001
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.002
@@ -39,6 +51,10 @@ ModelImporter:
     3300010: Cylinder.002
     3300012: Cylinder.003
     3300014: Plane.002
+    3300016: Plane.000
+    3300018: Cube.003
+    3300020: Cube.005
+    3300022: Plane.001
     4300000: Cylinder.001
     4300002: Cylinder
     4300004: Cube.002
@@ -47,7 +63,21 @@ ModelImporter:
     4300010: Plane.002
     4300012: Cylinder.002
     4300014: Cylinder.003
-  externalObjects: {}
+    4300016: Plane.000
+    4300018: Cube.005
+    4300020: Cube.003
+    4300022: Plane.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Prototype
+    second: {fileID: 2100000, guid: 88ad82e407c75dd4395a0554889e8f45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 3a25d493a6be1544aa518ecf9f2f17bd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

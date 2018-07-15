@@ -23,6 +23,10 @@ TextureImporter:
     21300036: Niveles
     21300038: Separador
     21300040: Atras
+    21300042: VolumenON
+    21300044: VolumenOff
+    21300046: Seleccion de arma
+    21300048: Movimiento
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -522,13 +526,93 @@ TextureImporter:
         width: 99
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 814e01874d017ab4c8261e6e6051ceec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VolumenON
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 17
+        width: 64
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95eec04be1cfd342ae1fda97088e639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VolumenOff
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 18
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207a876855971774ab7fbf3b5efddbbe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seleccion de arma
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 366
+        width: 120
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d00025c5e11f94287799834018113a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Movimiento
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 510
+        width: 69
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bb853a5f772b94ea0ce800bd33a7af
       vertices: []
       indices: 
       edges: []
