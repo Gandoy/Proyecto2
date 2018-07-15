@@ -146,7 +146,7 @@ public class Player : Character {
         }
 
         Vector3 mov = Vector3.zero;
-        if (Input.GetKeyDown(Jumpbutton))
+        if (Input.GetKeyDown(Jumpbutton)||FlynnInput.instance.JumpDown)
             
         {
             if (Jumps > 0)
@@ -197,6 +197,10 @@ public class Player : Character {
     private float TakeHorizontalInput()
     {
         float Dir = Input.GetAxis("Horizontal");
+        if (FlynnInput.instance.RightDown)
+            Dir = 1;
+        else if (FlynnInput.instance.LeftDown)
+            Dir = -1;
         if (Dir != 0)
         {
             AnimS.Refresh(true, "Caminata");
@@ -208,11 +212,11 @@ public class Player : Character {
 
     private bool TakeSlideInput()
     {
-        return Input.GetKey(Down);
+        return (Input.GetKey(Down)||FlynnInput.instance.DownDown);
     }
     private bool TakeShootInput()
     {
-        return Input.GetKey(Shoot);
+        return (Input.GetKey(Shoot)||FlynnInput.instance.ShootDown);
     }
     private void DoTheShooting()
     {

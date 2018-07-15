@@ -17,8 +17,19 @@ public class FlynnInput : MonoBehaviour {
     private KeyCode Left;
     [SerializeField]
     private KeyCode Right;
-    private bool LeftDown;
-    private bool RightDown;
+    public bool LeftDown;
+    public bool RightDown;
+    public bool DownDown;
+    public bool ShootDown;
+    public bool JumpDown;
+    private int WeaponIndex;
+    public static FlynnInput instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     public void PressedAKey(int I)
     {
@@ -35,7 +46,7 @@ public class FlynnInput : MonoBehaviour {
             {
                 if (Input.GetKeyDown(Weapons[K]))
                 {
-                    Debug.Log("entroCambioDeArma");
+                   // Debug.Log("entroCambioDeArma");
                     P.TakeAnyInput(K);
                 }  
             }
@@ -48,11 +59,49 @@ public class FlynnInput : MonoBehaviour {
     }
     public void LD()
     {
-        Debug.Log("heyheyhey");
+        //Debug.Log("heyheyhey");
         LeftDown = true;
     }
     public void LR()
     {
         LeftDown = false;
+    }
+    public void RD()
+    {
+        RightDown = true;
+    }
+    public void RR()
+    {
+        RightDown = false;
+    }
+    public void SD()
+    {
+        ShootDown = true;
+    }
+    public void SR()
+    {
+        ShootDown = false;
+    }
+    public void DD()
+    {
+        DownDown = true;
+    }
+    public void DR()
+    {
+        DownDown = false;
+    }
+    public void JD()
+    {
+        JumpDown = true;
+    }
+    public void JR()
+    {
+        JumpDown = false;
+    }
+    public void ChangeW()
+    {
+        WeaponIndex++;
+        WeaponIndex = WeaponIndex % Weapons.Count;
+        P.TakeAnyInput(WeaponIndex);
     }
 }

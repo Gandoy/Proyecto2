@@ -29,7 +29,7 @@ public class CameraMovement : MonoBehaviour {
             transform.localPosition=CamLimit;
     } 
 	void Update () {
-		if (Input.GetKey(Down)&&!Input.GetKey(Shoot))
+		if ((Input.GetKey(Down)||FlynnInput.instance.DownDown)&&!Input.GetKey(Shoot))
         {
             CurrentHold += Speed * Time.deltaTime;
         }
