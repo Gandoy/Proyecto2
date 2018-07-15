@@ -27,6 +27,12 @@ TextureImporter:
     21300044: VolumenOff
     21300046: Seleccion de arma
     21300048: Movimiento
+    21300050: BotonMovimiento
+    21300052: FondoAtaques
+    21300054: Ataque1
+    21300056: Ataque2
+    21300058: Ataque3
+    21300060: Ataque4
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -546,7 +552,7 @@ TextureImporter:
         width: 64
         height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,7 +572,7 @@ TextureImporter:
         width: 44
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -578,13 +584,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Seleccion de arma
+      name: BotonMovimiento
       rect:
         serializedVersion: 2
-        x: 889
-        y: 366
-        width: 120
-        height: 126
+        x: 909
+        y: 622
+        width: 63
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,19 +598,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41d00025c5e11f94287799834018113a
+      spriteID: cb5b08e77ce795f4cb1241251212c708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movimiento
+      name: FondoAtaques
       rect:
         serializedVersion: 2
         x: 894
-        y: 510
-        width: 69
-        height: 79
+        y: 138
+        width: 172
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -612,7 +618,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48bb853a5f772b94ea0ce800bd33a7af
+      spriteID: 9a4c58e2b2500854ba2bc21e9d53d87c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque1
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 345
+        width: 76
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ae834e4ce004f468b4d374f9a8740b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque2
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 347
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637012b14f0298646b143beb89ab0bec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque3
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 424
+        width: 72
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eedd8774e118ef4aba086d168966555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque4
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 424
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2c7b3df243abe4299f6637e9229c79
       vertices: []
       indices: 
       edges: []
