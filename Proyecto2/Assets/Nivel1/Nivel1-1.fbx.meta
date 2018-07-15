@@ -7,21 +7,31 @@ ModelImporter:
     100002: Plane_0
     100004: Terreno_0
     100006: Terreno_0.001
+    100008: Terreno_0.002
+    100010: Terreno_0.003
     400000: //RootNode
     400002: Plane_0
     400004: Terreno_0
     400006: Terreno_0.001
+    400008: Terreno_0.002
+    400010: Terreno_0.003
     2100000: Tierra3
     2100002: Nivel1-2
     2300000: Plane_0
     2300002: Terreno_0
     2300004: Terreno_0.001
+    2300006: Terreno_0.002
+    2300008: Terreno_0.003
     3300000: Plane_0
     3300002: Terreno_0
     3300004: Terreno_0.001
+    3300006: Terreno_0.002
+    3300008: Terreno_0.003
     4300000: Terreno_0.001
     4300002: Terreno_0
     4300004: Plane_0
+    4300006: Terreno_0.003
+    4300008: Terreno_0.002
   externalObjects: {}
   materials:
     importMaterials: 1

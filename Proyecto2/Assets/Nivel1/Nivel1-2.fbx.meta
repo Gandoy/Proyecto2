@@ -6,16 +6,21 @@ ModelImporter:
     100000: //RootNode
     100002: NivelesQA_mergedObject
     100004: Plane_0
+    100006: NivelesQA_mergedObject.001
     400000: //RootNode
     400002: NivelesQA_mergedObject
     400004: Plane_0
+    400006: NivelesQA_mergedObject.001
     2100000: Nivel1-2
     2300000: NivelesQA_mergedObject
     2300002: Plane_0
+    2300004: NivelesQA_mergedObject.001
     3300000: NivelesQA_mergedObject
     3300002: Plane_0
+    3300004: NivelesQA_mergedObject.001
     4300000: NivelesQA_mergedObject
     4300002: Plane_0
+    4300004: NivelesQA_mergedObject.001
   externalObjects:
   - first:
       type: UnityEngine:Material
