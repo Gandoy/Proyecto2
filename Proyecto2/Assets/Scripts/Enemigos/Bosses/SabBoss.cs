@@ -23,12 +23,18 @@ public class SabBoss : Character {
     private int Jumps;
     [SerializeField]
     private int MaxJumps;
-
+    [SerializeField]
+    private RotateModel Rotator;
+    [SerializeField]
+    private Animator anim;
     private void Start()
     {
         P = Player.PlayerSingleton;
     }
-
+    protected override void Death()
+    {
+        Destroy(gameObject);
+    }
     private void Awake()
     {
         CC = GetComponent<CharacterController>();
@@ -44,6 +50,11 @@ public class SabBoss : Character {
     {
         if (CC.isGrounded)
         {
+            anim.Play("Salto");
+            if (P.LeftOrRightFrom(transform.position.z) == -1)
+                Rotator.turnleft();
+            else
+                Rotator.turnright();
             float D;
         if (Jumps>0)
             {

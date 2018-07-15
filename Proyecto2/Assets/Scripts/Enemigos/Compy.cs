@@ -15,6 +15,8 @@ public class Compy : Character {
     private float Gravity;
     private CharacterController CC;
     private int direction=0;
+    [SerializeField]
+    private Animator anim;
 
     protected override void Death()
     {
@@ -51,6 +53,7 @@ public class Compy : Character {
         {
             direction = Player.PlayerSingleton.LeftOrRightFrom(transform.position.z);
                 VerticalForce = JumpPower;
+            anim.Play("Salto");
         }
             
         mov += Vector3.down * -VerticalForce;
