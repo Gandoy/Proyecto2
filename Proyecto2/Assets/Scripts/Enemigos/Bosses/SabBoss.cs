@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SabBoss : Character {
 
     private float AirTime;
@@ -27,13 +27,14 @@ public class SabBoss : Character {
     private RotateModel Rotator;
     [SerializeField]
     private Animator anim;
+    public string Escena;
     private void Start()
     {
         P = Player.PlayerSingleton;
     }
     protected override void Death()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(Escena);
     }
     private void Awake()
     {

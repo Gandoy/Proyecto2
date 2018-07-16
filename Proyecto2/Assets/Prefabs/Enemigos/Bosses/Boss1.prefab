@@ -1210,6 +1210,7 @@ MonoBehaviour:
   WalkSpeed: 5
   WalkTime: 2
   TimeBeforeCharge: 1
+  Escena: MenuGandy
 --- !u!114 &114735864312712228
 MonoBehaviour:
   m_ObjectHideFlags: 1

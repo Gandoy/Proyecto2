@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriBoss : Triceratops {
 
@@ -14,7 +15,12 @@ public class TriBoss : Triceratops {
     protected float WalkTime;
     [SerializeField]
     protected float TimeBeforeCharge;
+    public string Escena;
 
+    protected override void Death()
+    {
+        SceneManager.LoadScene(Escena);
+    }
 
     public virtual void TeleportTo(int index)
     {

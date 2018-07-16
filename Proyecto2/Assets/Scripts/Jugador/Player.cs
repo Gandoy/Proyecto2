@@ -48,7 +48,7 @@ public class Player : Character {
     [SerializeField]
     private float InvuAfterDmg;
     private bool IsHittable = true;
-    private int CurrentWeapon = 1;
+    private int CurrentWeapon = 0;
     private bool WallJump = true;
     private bool UsedWJ = false;
     [SerializeField]

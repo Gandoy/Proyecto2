@@ -798,6 +798,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PlatTargets: 0000000000000000000000000000000000000000000000000000000000000000
+  Escena: MenuGandy
 --- !u!137 &137103779654353874
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -10,6 +10,7 @@ public class TriBoss2 : TriBoss {
         CC = GetComponent<CharacterController>();
         PS = Player.PlayerSingleton;
         anim = GetComponent<Animator>();
+        anim.SetBool("Spinning", true);
     }
 
     void Update()
@@ -52,9 +53,14 @@ public class TriBoss2 : TriBoss {
     }
     public override void Getstunned()
     {
-        anim.SetBool("Charge", false);
+        anim.SetBool("Spinning", false);
         State = 2;
         Unstuntime = Time.time + StunTime;
         HorizontalSpeed = 0;
+    }
+    protected override void ReadyForCharge()
+    {
+        anim.SetBool("Spinning", true);
+        State = 1;
     }
 }

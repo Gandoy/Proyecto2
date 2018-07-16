@@ -10,6 +10,9 @@ public class BatController : MonoBehaviour {
     private int Bats=0;
     [SerializeField]
     private int BatLimit;
+    private bool Triggered = false;
+    [SerializeField]
+    private GameObject BigBat;
 
     public bool RoomForBats()
     {
@@ -22,6 +25,11 @@ public class BatController : MonoBehaviour {
     public void BatDie()
     {
         Bats--;
+        if (Bats == 0 && !Triggered)
+        {
+            BigBat.SetActive(true);
+            Triggered = true;
+        } 
     }
     private void Awake()
     {

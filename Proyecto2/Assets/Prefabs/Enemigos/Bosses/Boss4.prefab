@@ -1029,6 +1029,7 @@ MonoBehaviour:
   QuitRollingCD: 2
   AnimContainer: {fileID: 1724505620153868}
   Rotator: {fileID: 114327595291965434}
+  Escena: MenuGandy
 --- !u!114 &114590462708992068
 MonoBehaviour:
   m_ObjectHideFlags: 1

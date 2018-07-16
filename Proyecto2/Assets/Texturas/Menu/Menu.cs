@@ -18,4 +18,20 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Nivel2()
+    {
+        SceneManager.LoadScene("Nivel1-2");
+    }
+    public void Nivel3()
+    {
+        SceneManager.LoadScene("Nivel2");
+    }
+    public void Nivel4()
+    {
+        SceneManager.LoadScene("Nivel2-2");
+    }
+    public void Nivel5()
+    {
+        SceneManager.LoadScene("Boss5");
+    }
 }

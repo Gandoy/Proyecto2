@@ -14,6 +14,7 @@ public class PowerUpController : MonoBehaviour {
     [SerializeField]
     private Player P;
 
+
     public void Apply()
     {
         int ExtraHP = 0;
@@ -42,7 +43,7 @@ public class PowerUpController : MonoBehaviour {
         {
             
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+           // DontDestroyOnLoad(this.gameObject);
             Load();
             Apply();
         }

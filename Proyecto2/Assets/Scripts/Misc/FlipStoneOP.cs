@@ -13,7 +13,7 @@ public class FlipStoneOP : MonoBehaviour {
 	void Update () {
         if (isRight)
         {
-if (Input.GetKey(Right)&&!Input.GetKey(shoot))
+if ((Input.GetKey(Right)||FlynnInput.instance.RightDown)&&!Input.GetKey(shoot))
         {
             Debug.Log("giro<-");
             isRight = false;
@@ -24,7 +24,7 @@ if (Input.GetKey(Right)&&!Input.GetKey(shoot))
         else
 
        {
- if (Input.GetKey(left)&&!Input.GetKey(shoot))
+ if ((Input.GetKey(left)||FlynnInput.instance.LeftDown)&& !Input.GetKey(shoot))
         {
             Debug.Log("giro->");
             isRight = true;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PteBoss : MurcielagoIA {
 
     [SerializeField]
@@ -10,6 +10,8 @@ public class PteBoss : MurcielagoIA {
     private List<PlataformaBoss3> Plats;
     [SerializeField]
     private List<int> PlatTargets;
+    public string Escena;
+    
     private void Update()
     {
         if (LastPause < Time.time)
@@ -22,7 +24,7 @@ public class PteBoss : MurcielagoIA {
             speed = Speeds[CurrentWaypoint];
             if (Plats[CurrentWaypoint] != null) 
             Plats[CurrentWaypoint].Mov(PlatTargets[CurrentWaypoint]);
-         
+            Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
             LastPause = Time.time + PauseTime;
             //Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
 
@@ -30,6 +32,6 @@ public class PteBoss : MurcielagoIA {
     }
     protected override void Death()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(Escena);
     }
 }

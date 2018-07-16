@@ -1,8 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ArmadilloBoss : ArmadilloIA {
+
+    public string Escena;
+
+    protected override void Death()
+    {
+        SceneManager.LoadScene(Escena);
+    }
 
     private void Start()
     {
