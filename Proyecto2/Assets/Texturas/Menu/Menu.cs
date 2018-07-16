@@ -34,4 +34,8 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Boss5");
     }
+    public void Nivelboss4()
+    {
+        SceneManager.LoadScene("Boss4");
+    }
 }
