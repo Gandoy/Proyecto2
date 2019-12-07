@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/Menu.unity
+    guid: 4c41d8de77769574fa12d6db80aabdf2
+  - enabled: 1
+    path: Assets/Scene/Nivel1.unity
+    guid: ff5b247170c56f648a70919e575c7f4a
+  - enabled: 1
+    path: Assets/Scene/Tutorial.unity
+    guid: 980b1b833bebbe544bca8fbc4d0bee6f
   - enabled: 0
     path: Assets/Scene/MenuNico.unity
     guid: a65a3518f3613814d9af3c62c5e46692
-  - enabled: 0
-    path: Assets/Scene/Tutorial.unity
-    guid: 980b1b833bebbe544bca8fbc4d0bee6f
   - enabled: 0
     path: Assets/Scene/Nivel2-2.unity
     guid: 1dd4a93e71a9dab46be9af4971112877
@@ -23,25 +29,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene/Nivel2Boss.unity
     guid: 941f811df1318e841ac0dec89550ccc2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/MenuGandy.unity
     guid: b95a7f117650de940a3b38b04cfa1e1f
-  - enabled: 1
-    path: Assets/Scene/Nivel1.unity
-    guid: ff5b247170c56f648a70919e575c7f4a
   - enabled: 0
     path: Assets/Scene/Nivel2.unity
     guid: 8cadab3601269a34bb7ac06f2089d8f2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Nivel1-2.unity
     guid: e9ab3bf5323a9d44f8eedcedad058f3f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Boss4.unity
     guid: 8de749519c6eac34bbde923453769d64
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Nivel1Boss.unity
     guid: a1c23d9e8d8047f4fb067b3678527dac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Boss5.unity
     guid: 83ce16c58efb97d429ed005dd9abd60e
   m_configObjects: {}
