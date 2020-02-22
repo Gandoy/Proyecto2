@@ -30,8 +30,8 @@ public class PterodactiloIA : Character {
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Waypoints[CurrentWaypoint].position, speed);
-        if (Vector3.Distance(transform.position,Waypoints[CurrentWaypoint].position)<speed)
+        transform.position = Vector3.MoveTowards(transform.position, Waypoints[CurrentWaypoint].position, speed*Time.deltaTime);
+        if (Vector3.Distance(transform.position,Waypoints[CurrentWaypoint].position)<speed*Time.deltaTime)
         {
             CurrentWaypoint++;
             CurrentWaypoint = CurrentWaypoint % Waypoints.Count; //aritmetica modular vieja

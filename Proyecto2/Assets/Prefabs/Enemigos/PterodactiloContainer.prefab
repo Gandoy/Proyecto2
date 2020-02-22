@@ -426,7 +426,7 @@ MonoBehaviour:
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  speed: 0.1
+  speed: 3
   Projectile: {fileID: 1039386003817880, guid: 595ddf9b6b29b994db618dff4c79add1, type: 3}
   DropSpot: {fileID: 4139469686739228}
   AttackCD: 2

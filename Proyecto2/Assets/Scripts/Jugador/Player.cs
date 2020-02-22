@@ -178,7 +178,7 @@ public class Player : Character {
 
         }
 
-        VerticalForce -= Gravity;
+       if (Time.timeScale!=0f) VerticalForce -= Gravity;
         if (VerticalForce <= 0 && !ChrouchingJump)
         {
             gameObject.layer = DefaultLayer;
