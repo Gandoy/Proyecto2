@@ -6,13 +6,21 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class PowerUpController : MonoBehaviour {
 
     public static PowerUpController instance;
-
+    
+    //cuando hize esta lista solo dios y yo sabiamos por que la hize lista y no array, ahora solo dios lo sabe -Nico C.
     [SerializeField]
     private List<bool> PUps;
     [SerializeField]
     private string SaveName;
     [SerializeField]
     private Player P;
+    [SerializeField]
+    private bool[] weapons = new bool[3];
+
+    public bool[] Weapons ()
+    {
+        return weapons;
+    }
 
 
     public void Apply()

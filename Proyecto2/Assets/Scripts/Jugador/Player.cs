@@ -63,7 +63,17 @@ public class Player : Character {
     private float slideMultiplier;
     [SerializeField]
     private bool ApplySlide;
+    [SerializeField]
+    private bool[] weapons = new bool[3];
 
+    public void SetWpns(bool[]Wpns)
+    {
+        weapons = Wpns;
+    }
+    public void TurnWpnOn(int Windex)
+    {
+        weapons[Windex] = true;
+    }
     public override void GetDamaged(int Damage)
     {
         if (IsHittable)
@@ -81,7 +91,7 @@ public class Player : Character {
 
     public void TakeAnyInput(int I)
     {
-        if (I < 4) SwitchWeapon(I);
+        if (I < 4&&weapons[I]) SwitchWeapon(I);
     }
     public void SetMaxHP(int value)
     {

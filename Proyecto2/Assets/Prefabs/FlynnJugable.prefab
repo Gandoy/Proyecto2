@@ -2252,6 +2252,7 @@ MonoBehaviour:
   slideFriction: 0.3
   slideMultiplier: 50
   ApplySlide: 0
+  weapons: 010000
 --- !u!1 &1990592662978474
 GameObject:
   m_ObjectHideFlags: 0
