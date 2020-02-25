@@ -40,6 +40,10 @@ public class PowerUpController : MonoBehaviour {
     {
         return PUps[index];
     }
+    public bool CheckWpn(int index)
+    {
+        return weapons[index];
+    }
     public void SetPup(int Index, bool B=true)
     {
         PUps[Index] = B;
