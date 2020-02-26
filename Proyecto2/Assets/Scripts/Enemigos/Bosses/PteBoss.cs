@@ -12,6 +12,7 @@ public class PteBoss : MurcielagoIA {
     private List<int> PlatTargets;
     public string Escena;
     
+    
     private void Update()
     {
         if (LastPause < Time.time)
@@ -24,7 +25,11 @@ public class PteBoss : MurcielagoIA {
             speed = Speeds[CurrentWaypoint];
             if (Plats[CurrentWaypoint] != null) 
             Plats[CurrentWaypoint].Mov(PlatTargets[CurrentWaypoint]);
-            Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
+            // Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
+            //fix para la rotacion del boss, hardcodie en que waypoints rota<--------
+            if (CurrentWaypoint == 1) Rotator.turnleft();
+            if (CurrentWaypoint == 6) Rotator.turnright();
+           //fin del fix, parametrizar esta mierda si algun dia hay que fixxearlo, programe esto a las 3 am, no me juzgues.
             LastPause = Time.time + PauseTime;
             //Rotator.turnTowards(Waypoints[CurrentWaypoint].position);
 
