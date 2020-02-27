@@ -8,6 +8,8 @@ public class MenuPausa : MonoBehaviour
     public static bool JuegoPausado = false;
 
     public GameObject MenuPausaUI;
+    [SerializeField]
+    private GameObject Stones;
 
     public Animator anim;
 
@@ -28,12 +30,15 @@ public class MenuPausa : MonoBehaviour
     public void Continuar()
     {
         MenuPausaUI.SetActive(false);
+        Stones.SetActive(false);
         Time.timeScale = 1f;
         JuegoPausado = false;
     }
     void Pausa()
     {
         MenuPausaUI.SetActive(true);
+        Stones.SetActive(true);
+       // anim.Play("Rise");
         Time.timeScale = 0f;
         JuegoPausado = true;
     }
