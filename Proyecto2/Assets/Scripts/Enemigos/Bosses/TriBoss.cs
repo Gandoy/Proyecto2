@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class TriBoss : Triceratops {
 
@@ -16,6 +17,12 @@ public class TriBoss : Triceratops {
     [SerializeField]
     protected float TimeBeforeCharge;
     public string Escena;
+    [SerializeField]
+    private int secondPhaseHp;
+    [SerializeField]
+    private List<SpikeSpawner> spawners;
+    private System.Random rand = new System.Random();
+    private bool ischarging;
 
     protected override void Death()
     {
@@ -37,6 +44,16 @@ public class TriBoss : Triceratops {
         anim = GetComponent<Animator>();
     }
    
+    private void SecondPhase ()
+    {
+        foreach (SpikeSpawner S in spawners)
+        {
+            double i = rand.NextDouble();
+            double j = rand.Next(0, 3);
+            float h = (float)i + (float)j;
+            S.SpawnSpike(h);
+        }
+    }
     void Update()
     {
         switch (State)
@@ -44,11 +61,15 @@ public class TriBoss : Triceratops {
             case 1:
                 {
                     Charge();
+                   
+                    if (HP < secondPhaseHp&&!ischarging)
+                        SecondPhase();
+                    ischarging = true;
                     break;
                 }
             case 2:
                 {
-                   
+                    ischarging = false;
                     break;
                 }
         }

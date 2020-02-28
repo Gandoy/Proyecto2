@@ -7,9 +7,14 @@ public class SpikeSpawner : MonoBehaviour
     [SerializeField]
     private GameObject Spike;
 
-    public void SpawnSpike()
+    public void SpawnSpike(float X)
+    {
+        Invoke("spawnforinvoke", X);
+    }
+    private void spawnforinvoke()
     {
         Instantiate(Spike, transform.position, transform.rotation);
+
     }
 
 }
