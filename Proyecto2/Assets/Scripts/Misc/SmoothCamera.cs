@@ -12,7 +12,7 @@ public class SmoothCamera : MonoBehaviour
     private Vector3 offset;
 
 
-    
+    [SerializeField]
     private GameObject Player;
     // Start is called before the first frame update
     void Start()
