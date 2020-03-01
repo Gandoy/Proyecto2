@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 114285378538219048, guid: 8461b6c5f5fdc664abf9682864ad9e62,
         type: 3}
       propertyPath: Escena
-      value: MenuGandy
+      value: Nivel2
       objectReference: {fileID: 0}
     - target: {fileID: 114285378538219048, guid: 8461b6c5f5fdc664abf9682864ad9e62,
         type: 3}
