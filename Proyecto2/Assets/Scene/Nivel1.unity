@@ -8167,6 +8167,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1844592128}
     m_Modifications:
+    - target: {fileID: -4107851534776664853, guid: 6f6fffbc70e984f4994321c29f3e6e1a,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4316227620307294, guid: 6f6fffbc70e984f4994321c29f3e6e1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.36
@@ -12706,6 +12711,7 @@ MonoBehaviour:
   MaxHP: 0
   HP: 0
   BlinkTime: 0
+  soundQueue: {fileID: 0}
   Texturas: []
 --- !u!65 &1654148250
 BoxCollider:
@@ -14166,6 +14172,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4356070369709394, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443863509043012, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.79
+      objectReference: {fileID: 0}
     - target: {fileID: 4342058986763726, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.503
@@ -14197,14 +14211,6 @@ PrefabInstance:
     - target: {fileID: 4342058986763726, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356070369709394, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443863509043012, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
@@ -17391,6 +17397,7 @@ MonoBehaviour:
   MaxHP: 10
   HP: 0
   BlinkTime: 0
+  soundQueue: {fileID: 0}
   BaseHP: 10
   HorizontalSpeed: 10
   Gravity: 3

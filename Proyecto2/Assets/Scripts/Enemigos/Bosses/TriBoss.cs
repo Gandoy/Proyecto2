@@ -26,6 +26,7 @@ public class TriBoss : Triceratops {
 
     protected override void Death()
     {
+        Instantiate(SFXondeath, transform.position, transform.rotation);
         SceneManager.LoadScene(Escena);
     }
 

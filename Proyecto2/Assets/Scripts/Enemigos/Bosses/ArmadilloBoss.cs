@@ -9,6 +9,7 @@ public class ArmadilloBoss : ArmadilloIA {
 
     protected override void Death()
     {
+        Instantiate(SFXondeath, transform.position, transform.rotation);
         SceneManager.LoadScene(Escena);
     }
 

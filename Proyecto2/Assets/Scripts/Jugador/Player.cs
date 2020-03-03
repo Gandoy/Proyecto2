@@ -130,6 +130,7 @@ public class Player : Character {
     {
         HP = MaxHP;
         CC = GetComponent<CharacterController>();
+        soundQueue = GetComponent<AudioSource>();
     }
     private void Awake()
     {

@@ -12,6 +12,10 @@ public class Character : MonoBehaviour {
     protected int HP;
     [SerializeField]
     private float BlinkTime;
+  
+    protected AudioSource soundQueue;
+    [SerializeField]
+    protected GameObject SFXondeath;
    // [SerializeField]
    // private Color DefaultC;
    /* private int estadoDeBrazos;
@@ -43,9 +47,14 @@ public class Character : MonoBehaviour {
     {
       //  GetComponent<MeshRenderer>().material.SetColor(Shader.PropertyToID("_Color"), DefaultC);
     }
+    protected virtual void  SoundQueue()
+    {
+        soundQueue.Play();
+    }
 
     public virtual void  GetDamaged(int Damage)
     {
+        SoundQueue();
         VisualQueue();
         HP -= Damage;
         if (HP <= 0) Death();
@@ -58,10 +67,16 @@ public class Character : MonoBehaviour {
     }
     protected virtual void Death()
     {
+        Instantiate(SFXondeath, transform.position, transform.rotation);
         //cosas que pasan cuando muere aca
     }
     protected virtual void StuffToDoOnAwake()
     {
+        soundQueue = GetComponent<AudioSource>();
         HP = MaxHP;
+    }
+   public void Awake()
+    {
+        StuffToDoOnAwake();
     }
 }

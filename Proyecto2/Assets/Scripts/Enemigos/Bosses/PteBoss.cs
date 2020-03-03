@@ -62,6 +62,7 @@ public class PteBoss : MurcielagoIA {
     }
     protected override void Death()
     {
+        Instantiate(SFXondeath, transform.position, transform.rotation);
         SceneManager.LoadScene(Escena);
     }
 }

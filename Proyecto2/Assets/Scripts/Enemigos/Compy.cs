@@ -21,6 +21,8 @@ public class Compy : Character {
     protected override void Death()
     {
         Destroy(gameObject);
+        Instantiate(SFXondeath, transform.position, transform.rotation);
+
     }
 
     private void Start()

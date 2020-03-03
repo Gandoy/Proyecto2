@@ -21,6 +21,7 @@ public class MurcielagoIA : Character {
     {
         if(BatController.instance!=null)
         BatController.instance.BatDie();
+        Instantiate(SFXondeath, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

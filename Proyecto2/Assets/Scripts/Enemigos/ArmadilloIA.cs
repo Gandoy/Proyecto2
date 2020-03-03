@@ -49,6 +49,8 @@ public class ArmadilloIA : Character {
     }
     protected override void Death()
     {
+        Instantiate(SFXondeath, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
     private void Update()

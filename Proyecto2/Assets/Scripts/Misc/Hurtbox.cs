@@ -12,9 +12,10 @@ public class Hurtbox : MonoBehaviour {
    // public float FlashDuration;
     public float Flashtime;
     public float Flashes;
-    
+   
 
-  public virtual void GetHit(int damage)
+
+    public virtual void GetHit(int damage)
     {
        // Debug.Log("entroGetHit");
         Char.GetDamaged(damage);
