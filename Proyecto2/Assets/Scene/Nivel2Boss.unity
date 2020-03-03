@@ -3731,6 +3731,11 @@ PrefabInstance:
       propertyPath: Escena
       value: Nivel3
       objectReference: {fileID: 0}
+    - target: {fileID: 114426776958269446, guid: c05614b02056be04991b808bf9578957,
+        type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 2074270509}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05614b02056be04991b808bf9578957, type: 3}
 --- !u!1001 &1075556695
@@ -7327,6 +7332,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7559581a2da62c44a900eb30b0027985,
     type: 3}
   m_PrefabInstance: {fileID: 744818185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2074270509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398924503406622, guid: c05614b02056be04991b808bf9578957,
+    type: 3}
+  m_PrefabInstance: {fileID: 1073402732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098362744
 GameObject:

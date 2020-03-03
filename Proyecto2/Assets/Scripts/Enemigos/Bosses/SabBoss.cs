@@ -28,18 +28,38 @@ public class SabBoss : Character {
     [SerializeField]
     private Animator anim;
     public string Escena;
+    [SerializeField]
+    private float scenedelay;
+    [SerializeField]
+    private GameObject hitbox;
+    private bool deadalready = false;
     private void Start()
     {
         P = Player.PlayerSingleton;
     }
     protected override void Death()
     {
-        Instantiate(SFXondeath, transform.position, transform.rotation);
+        if (!deadalready)
+        {
+            Instantiate(SFXondeath, transform.position, transform.rotation);
+            CancelInvoke();
+            Invoke("scenechange", scenedelay);
+
+            Destroy(hitbox);
+
+            deadalready = true;
+        }
+           
+    }
+    private void scenechange()
+    {
         SceneManager.LoadScene(Escena);
+
     }
     private void Awake()
     {
         CC = GetComponent<CharacterController>();
+        soundQueue = GetComponent<AudioSource>();
         AirTime = (JumpPower / Gravity) * 2;
     }
 
@@ -50,7 +70,8 @@ public class SabBoss : Character {
 
     private void Update()
     {
-        if (CC.isGrounded)
+       
+        if (CC.isGrounded&&!deadalready)
         {
             anim.Play("Salto");
             if (P.LeftOrRightFrom(transform.position.z) == -1)
@@ -58,7 +79,7 @@ public class SabBoss : Character {
             else
                 Rotator.turnright();
             float D;
-        if (Jumps>0)
+        if (Jumps>0&&!deadalready)
             {
                D = transform.position.z - Target.position.z;
                 Jumps--;

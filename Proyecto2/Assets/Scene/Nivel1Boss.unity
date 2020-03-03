@@ -220,6 +220,16 @@ PrefabInstance:
       propertyPath: spawners.Array.data[6]
       value: 
       objectReference: {fileID: 1223625396}
+    - target: {fileID: 114285378538219048, guid: 8461b6c5f5fdc664abf9682864ad9e62,
+        type: 3}
+      propertyPath: scenedelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114285378538219048, guid: 8461b6c5f5fdc664abf9682864ad9e62,
+        type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 846856644}
     - target: {fileID: 1000074432947356, guid: 8461b6c5f5fdc664abf9682864ad9e62, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1263,6 +1273,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 114599570329749752, guid: 53c14bc787bf4424fad5b3c9f71a9d48, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53c14bc787bf4424fad5b3c9f71a9d48, type: 3}
+--- !u!1 &846856644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1282142799828524, guid: 8461b6c5f5fdc664abf9682864ad9e62,
+    type: 3}
+  m_PrefabInstance: {fileID: 20004115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &928034767 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,

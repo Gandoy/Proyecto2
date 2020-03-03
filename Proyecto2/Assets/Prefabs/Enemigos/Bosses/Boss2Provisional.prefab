@@ -204,6 +204,8 @@ MonoBehaviour:
   Rotator: {fileID: 114863983153058900}
   anim: {fileID: 95377819952659670}
   Escena: MenuNico
+  scenedelay: 3
+  hitbox: {fileID: 0}
 --- !u!82 &-7728881722559790356
 AudioSource:
   m_ObjectHideFlags: 0

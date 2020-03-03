@@ -23,11 +23,31 @@ public class TriBoss : Triceratops {
     private List<SpikeSpawner> spawners;
     private System.Random rand = new System.Random();
     private bool ischarging;
+    [SerializeField]
+    private float scenedelay;
+    [SerializeField]
+    private GameObject hitbox;
+    private bool deadalready = false;
 
     protected override void Death()
     {
-        Instantiate(SFXondeath, transform.position, transform.rotation);
+        if (!deadalready)
+        {
+            Instantiate(SFXondeath, transform.position, transform.rotation);
+            CancelInvoke();
+            Invoke("scenechange", scenedelay);
+            HorizontalSpeed = 0;
+            anim.SetBool("Charge", false);
+            Destroy(hitbox);
+            State = 3;
+            deadalready = true;
+        }
+        
+    }
+    private void scenechange()
+    {
         SceneManager.LoadScene(Escena);
+
     }
 
     public virtual void TeleportTo(int index)
@@ -71,6 +91,11 @@ public class TriBoss : Triceratops {
             case 2:
                 {
                     ischarging = false;
+                    break;
+                }
+            case 3:
+                {
+                    
                     break;
                 }
         }
