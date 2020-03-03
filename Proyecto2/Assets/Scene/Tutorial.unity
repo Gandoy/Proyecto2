@@ -1829,7 +1829,7 @@ PrefabInstance:
     - target: {fileID: 114625160435229646, guid: 77bd6136fffbe994680af3106da90eaa,
         type: 3}
       propertyPath: Escena
-      value: Boss6
+      value: Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77bd6136fffbe994680af3106da90eaa, type: 3}
@@ -3373,6 +3373,7 @@ MonoBehaviour:
   MaxHP: 0
   HP: 0
   BlinkTime: 0
+  SFXondeath: {fileID: 0}
   Texturas: []
 --- !u!43 &1065622993
 Mesh:

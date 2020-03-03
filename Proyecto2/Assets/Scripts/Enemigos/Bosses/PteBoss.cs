@@ -24,6 +24,11 @@ public class PteBoss : MurcielagoIA {
     private List<int> WaypointsToTurnRight;
     [SerializeField]
     private Transform DropSpot;
+    [SerializeField]
+    private GameObject hitbox;
+    [SerializeField]
+    private float scenedelay;
+    private bool deadalready = false;
 
     private void DropStone()
     {
@@ -34,7 +39,11 @@ public class PteBoss : MurcielagoIA {
         }
            
     }
+    private void scenechange()
+    {
+        SceneManager.LoadScene(Escena);
 
+    }
     private void Update()
     {
         if (LastPause < Time.time)
@@ -62,7 +71,15 @@ public class PteBoss : MurcielagoIA {
     }
     protected override void Death()
     {
-        Instantiate(SFXondeath, transform.position, transform.rotation);
-        SceneManager.LoadScene(Escena);
+        if (!deadalready)
+        {
+            Instantiate(SFXondeath, transform.position, transform.rotation);
+            CancelInvoke();
+            Invoke("scenechange", scenedelay);
+
+            Destroy(hitbox);
+            speed = 0;
+            deadalready = true;
+        }
     }
 }
