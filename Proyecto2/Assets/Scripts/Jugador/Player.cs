@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : Character {
     [SerializeField]
     private int BaseHP;
@@ -65,6 +65,8 @@ public class Player : Character {
     private bool ApplySlide;
     [SerializeField]
     private bool[] weapons = new bool[3];
+    [SerializeField]
+    private List<Image> Healthbars;
 
     public void SetWpns(bool[]Wpns)
     {
@@ -81,6 +83,11 @@ public class Player : Character {
             HP -= Damage;
             IsHittable = false;
             Invoke("StopBeingImmune", InvuAfterDmg);
+            foreach (Image I in Healthbars)
+            {
+                
+                I.fillAmount = (float)HP/(float)MaxHP;
+            }
         }
         
     }
