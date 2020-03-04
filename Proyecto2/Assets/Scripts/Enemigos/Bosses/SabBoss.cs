@@ -33,6 +33,32 @@ public class SabBoss : Character {
     [SerializeField]
     private GameObject hitbox;
     private bool deadalready = false;
+    [SerializeField]
+    private GameObject WeaponPup;
+    [SerializeField]
+    private Transform WPupSpawnP;
+    private bool DroppedWeaponAlready;
+    [SerializeField]
+    private float LastJumpPower;
+    private float lastairtime;
+    private bool LastJump;
+    [SerializeField]
+    private float LastJumpError;
+
+    public override void GetDamaged(int Damage)
+    {
+        SoundQueue();
+        VisualQueue();
+        HP -= Damage; if (HP <= 0&&!DroppedWeaponAlready)
+        {
+            Instantiate(WeaponPup, WPupSpawnP.position, WPupSpawnP.rotation);
+            DroppedWeaponAlready = true;
+        }
+        if (LastJump)
+        {
+            Death();
+        }
+    }
     private void Start()
     {
         P = Player.PlayerSingleton;
@@ -61,51 +87,94 @@ public class SabBoss : Character {
         CC = GetComponent<CharacterController>();
         soundQueue = GetComponent<AudioSource>();
         AirTime = (JumpPower / Gravity) * 2;
+        lastairtime = (LastJumpPower / Gravity);
     }
 
     private float VX(float Distance)
     {
         return Distance / AirTime;
     }
-
+    private float LVX (float distance)
+    {
+        return distance / lastairtime;
+    }
     private void Update()
     {
        
-        if (CC.isGrounded&&!deadalready)
+        if (!DroppedWeaponAlready)
         {
-            anim.Play("Salto");
-            if (P.LeftOrRightFrom(transform.position.z) == -1)
-                Rotator.turnleft();
-            else
-                Rotator.turnright();
-            float D;
-        if (Jumps>0&&!deadalready)
+            if (CC.isGrounded)
             {
-               D = transform.position.z - Target.position.z;
-                Jumps--;
-            }
-            else
-            {
-                Jumps = MaxJumps;
-                if (P.LeftOrRightFrom(transform.position.z)==-1)
+                anim.Play("Salto");
+                if (P.LeftOrRightFrom(transform.position.z) == -1)
+                    Rotator.turnleft();
+                else
+                    Rotator.turnright();
+                float D;
+                if (Jumps > 0)
                 {
-                    D = transform.position.z - RightC.position.z;
+                    D = transform.position.z - Target.position.z;
+                    Jumps--;
                 }
-             else
+                else
                 {
-                    D = transform.position.z - LeftC.position.z;
+                    Jumps = MaxJumps;
+                    if (P.LeftOrRightFrom(transform.position.z) == -1)
+                    {
+                        D = transform.position.z - RightC.position.z;
+                    }
+                    else
+                    {
+                        D = transform.position.z - LeftC.position.z;
+                    }
+
                 }
 
+                vx = VX(D);
+                VForce = JumpPower;
+                Direction = P.LeftOrRightFrom(transform.position.z);
             }
-               
-            vx = VX(D);
-            VForce = JumpPower;
-            Direction = P.LeftOrRightFrom(transform.position.z);
+            else
+                VForce -= Gravity * Time.deltaTime;
+            Vector3 mov = new Vector3(0, VForce, vx * -1);
+            CC.Move(mov * Time.deltaTime);
         }
         else
-            VForce -= Gravity * Time.deltaTime;
-        Vector3 mov = new Vector3(0, VForce, vx*-1);
-        CC.Move(mov*Time.deltaTime);
-       
+        {
+            if (CC.isGrounded&&!LastJump)
+            {
+                anim.Play("Salto");
+                if (P.LeftOrRightFrom(transform.position.z) == -1)
+                    Rotator.turnleft();
+                else
+                    Rotator.turnright();
+                float D;
+                
+                
+                Jumps = MaxJumps;
+                    
+                D = transform.position.z - LeftC.position.z;
+                    
+
+                
+
+                vx = LVX(D);
+                VForce = LastJumpPower;
+                Direction = P.LeftOrRightFrom(transform.position.z);
+                LastJump = true;
+            }
+            else
+                VForce -= Gravity * Time.deltaTime;
+
+            if (transform.position.z < LastJumpError)
+            {
+                vx = 0;
+            }
+            Vector3 mov = new Vector3(0, VForce, vx * -1);
+            
+            CC.Move(mov * Time.deltaTime);
+        }
     }
+       
+    
 }

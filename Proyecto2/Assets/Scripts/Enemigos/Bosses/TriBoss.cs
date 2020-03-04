@@ -28,6 +28,11 @@ public class TriBoss : Triceratops {
     [SerializeField]
     private GameObject hitbox;
     private bool deadalready = false;
+    [SerializeField]
+    private GameObject WeaponPup;
+    [SerializeField]
+    private Transform WPupSpawnP;
+    private bool DroppedWeaponAlready;
 
     protected override void Death()
     {
@@ -67,6 +72,11 @@ public class TriBoss : Triceratops {
    
     private void SecondPhase ()
     {
+        if (!DroppedWeaponAlready)
+        {
+            Instantiate(WeaponPup, WPupSpawnP.position, WPupSpawnP.rotation);
+            DroppedWeaponAlready = true;
+        }
         foreach (SpikeSpawner S in spawners)
         {
             double i = rand.NextDouble();

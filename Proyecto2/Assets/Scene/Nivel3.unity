@@ -1792,7 +1792,7 @@ PrefabInstance:
     - target: {fileID: 114625160435229646, guid: 77bd6136fffbe994680af3106da90eaa,
         type: 3}
       propertyPath: Escena
-      value: Boss3
+      value: Nivel3Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77bd6136fffbe994680af3106da90eaa, type: 3}
