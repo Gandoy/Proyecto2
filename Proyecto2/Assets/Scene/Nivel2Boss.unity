@@ -3904,6 +3904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1048879597491788, guid: c05614b02056be04991b808bf9578957, type: 3}
+      propertyPath: m_Name
+      value: Boss2
+      objectReference: {fileID: 0}
     - target: {fileID: 4521623257728066, guid: c05614b02056be04991b808bf9578957, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.57
@@ -3985,12 +3989,22 @@ PrefabInstance:
     - target: {fileID: 114426776958269446, guid: c05614b02056be04991b808bf9578957,
         type: 3}
       propertyPath: MaxHP
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114426776958269446, guid: c05614b02056be04991b808bf9578957,
         type: 3}
       propertyPath: HP
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426776958269446, guid: c05614b02056be04991b808bf9578957,
+        type: 3}
+      propertyPath: DefaultLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426776958269446, guid: c05614b02056be04991b808bf9578957,
+        type: 3}
+      propertyPath: AcrossPlatformsLayer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05614b02056be04991b808bf9578957, type: 3}

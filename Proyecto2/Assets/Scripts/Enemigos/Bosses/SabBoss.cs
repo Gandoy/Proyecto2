@@ -44,6 +44,11 @@ public class SabBoss : Character {
     private bool LastJump;
     [SerializeField]
     private float LastJumpError;
+    [SerializeField]
+    private int DefaultLayer;
+    [SerializeField]
+    private int AcrossPlatformsLayer;
+   
 
     public override void GetDamaged(int Damage)
     {
@@ -141,8 +146,10 @@ public class SabBoss : Character {
         }
         else
         {
+            //ultimo salto
             if (CC.isGrounded&&!LastJump)
             {
+                gameObject.layer = AcrossPlatformsLayer;
                 anim.Play("Salto");
                 if (P.LeftOrRightFrom(transform.position.z) == -1)
                     Rotator.turnleft();
@@ -166,9 +173,14 @@ public class SabBoss : Character {
             else
                 VForce -= Gravity * Time.deltaTime;
 
-            if (transform.position.z < LastJumpError)
+            if (transform.position.z-LeftC.position.z <=LastJumpError|| 
+                -transform.position.z + LeftC.position.z >=-LastJumpError) //para no seguir muy de largo
             {
                 vx = 0;
+            }
+            if (transform.position.y>=(LastJumpPower/2)*lastairtime)//receta casera para calcular altura maxima
+            {
+                gameObject.layer = DefaultLayer;
             }
             Vector3 mov = new Vector3(0, VForce, vx * -1);
             
