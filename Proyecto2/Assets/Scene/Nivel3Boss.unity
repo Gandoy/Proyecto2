@@ -299,7 +299,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: beb6f70b96fe9ea47ba89142623c24f3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b1c3d83a81c89ad4488b5b65352b088f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -396,6 +396,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlynnJugable
       objectReference: {fileID: 0}
+    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
+        type: 3}
+      propertyPath: Healthbars.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
+        type: 3}
+      propertyPath: HP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
+        type: 3}
+      propertyPath: Healthbars.Array.data[0]
+      value: 
+      objectReference: {fileID: 758101135}
+    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
+        type: 3}
+      propertyPath: Healthbars.Array.data[1]
+      value: 
+      objectReference: {fileID: 775432015}
+    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
+        type: 3}
+      propertyPath: Healthbars.Array.data[2]
+      value: 
+      objectReference: {fileID: 1325297835}
     - target: {fileID: 4282938671070658, guid: df5c0a74d3510594f96982dbbbe422ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.78157
@@ -440,31 +465,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 3}
-      propertyPath: Healthbars.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 3}
-      propertyPath: HP
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 3}
-      propertyPath: Healthbars.Array.data[0]
-      value: 
-      objectReference: {fileID: 758101135}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 3}
-      propertyPath: Healthbars.Array.data[1]
-      value: 
-      objectReference: {fileID: 775432015}
-    - target: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
-        type: 3}
-      propertyPath: Healthbars.Array.data[2]
-      value: 
-      objectReference: {fileID: 1325297835}
     - target: {fileID: 1126414842780864, guid: df5c0a74d3510594f96982dbbbe422ec, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -874,16 +874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7882232988625678843, guid: 602f368c9b5807942ab38ce104ca71c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217443778338855541, guid: 602f368c9b5807942ab38ce104ca71c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1421970786999900, guid: 602f368c9b5807942ab38ce104ca71c4, type: 3}
       propertyPath: m_Name
       value: Controles
@@ -991,6 +981,16 @@ PrefabInstance:
     - target: {fileID: 224322463805141460, guid: 602f368c9b5807942ab38ce104ca71c4,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882232988625678843, guid: 602f368c9b5807942ab38ce104ca71c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217443778338855541, guid: 602f368c9b5807942ab38ce104ca71c4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
