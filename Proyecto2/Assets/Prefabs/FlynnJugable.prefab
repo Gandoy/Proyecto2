@@ -2222,10 +2222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Front: {x: 0, y: 0, z: 1}
-  MaxHP: 10
-  HP: 0
+  MaxHP: 5
+  HP: 5
   BlinkTime: 0
-  BaseHP: 10
+  SFXondeath: {fileID: 0}
+  BaseHP: 5
   HorizontalSpeed: 10
   Gravity: 3
   JumpSpeed: 40
@@ -2253,6 +2254,7 @@ MonoBehaviour:
   slideMultiplier: 50
   ApplySlide: 0
   weapons: 010000
+  Healthbars: []
 --- !u!1 &1990592662978474
 GameObject:
   m_ObjectHideFlags: 0

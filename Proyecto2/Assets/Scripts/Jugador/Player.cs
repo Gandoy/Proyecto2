@@ -103,6 +103,7 @@ public class Player : Character {
     public void SetMaxHP(int value)
     {
         MaxHP = BaseHP + value;
+        HP = MaxHP;
     }
 
     private void StopCJ()

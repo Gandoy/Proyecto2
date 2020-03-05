@@ -16,6 +16,10 @@ public class PowerUpController : MonoBehaviour {
     private Player P;
     [SerializeField]
     private bool[] weapons = new bool[3];
+    [SerializeField]
+    private int PowerUpHPAmount;
+    [SerializeField]
+    private List<GameObject> Healthbars; //tiene que ser igual en tamaño al numero de power ups en el juego, automatizar si me sobra tiempo
 
     public bool[] Weapons ()
     {
@@ -25,12 +29,15 @@ public class PowerUpController : MonoBehaviour {
 
     public void Apply()
     {
+        int healthbar = 0;
         int ExtraHP = 0;
         foreach(bool B in PUps)
         {
             if(B)
             {
-                ExtraHP++;
+                healthbar++;
+                ExtraHP+=PowerUpHPAmount;
+                Healthbars[healthbar-1].SetActive(true);
             }
         }
         P.SetMaxHP(ExtraHP);
