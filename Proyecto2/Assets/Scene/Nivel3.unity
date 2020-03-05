@@ -2350,6 +2350,38 @@ MonoBehaviour:
   BlinkTime: 0
   SFXondeath: {fileID: 0}
   Texturas: []
+--- !u!1 &1452332007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2502203975881118265, guid: 6b6d0e91c0fba5548b948f74c5163278,
+    type: 3}
+  m_PrefabInstance: {fileID: 1490683050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1452332011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452332007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0ed3bc064aa5349ac493d6f92ea9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 99
+--- !u!65 &1452332012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452332007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019145459, y: 0.19580099, z: 0.03621297}
+  m_Center: {x: -0.006312544, y: 0.31866145, z: 0.005}
 --- !u!114 &1486328402 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114407444885545616, guid: df5c0a74d3510594f96982dbbbe422ec,
@@ -2388,6 +2420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502203975881118265, guid: 6b6d0e91c0fba5548b948f74c5163278,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8051415255134806348, guid: 6b6d0e91c0fba5548b948f74c5163278,
         type: 3}
