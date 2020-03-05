@@ -847,7 +847,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 66192c80ed52b0841aedfd3a6627b53f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -217.16783
+      value: -218.02
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 66192c80ed52b0841aedfd3a6627b53f,
         type: 3}
@@ -857,7 +857,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 66192c80ed52b0841aedfd3a6627b53f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 175.84196
+      value: 175.85
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 66192c80ed52b0841aedfd3a6627b53f,
         type: 3}
@@ -1181,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 4248832436660598840, guid: bb88a91559731c642bdd414ecbe06e19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.02434
+      value: 35.935
       objectReference: {fileID: 0}
     - target: {fileID: 4248832436660598840, guid: bb88a91559731c642bdd414ecbe06e19,
         type: 3}
@@ -1631,9 +1631,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoints para Pterodactilo
       objectReference: {fileID: 0}
+    - target: {fileID: 4356070369709394, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4342058986763726, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.57
+      value: 45.36
       objectReference: {fileID: 0}
     - target: {fileID: 4342058986763726, guid: c7cdc70bbfed2e64ea7edd6c54e217d9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1866,7 +1870,7 @@ GameObject:
   - component: {fileID: 1155512892}
   - component: {fileID: 1155512891}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: event system
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2454,7 +2458,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6b6d0e91c0fba5548b948f74c5163278,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.72106
+      value: 32.75
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6b6d0e91c0fba5548b948f74c5163278,
         type: 3}
