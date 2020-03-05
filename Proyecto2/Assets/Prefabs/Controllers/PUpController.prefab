@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb9b2ea00e039b4eb00b5d623a9b9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PUps: 00
+  PUps: 0000
   SaveName: /DoNotHack.dat
   P: {fileID: 0}
   weapons: 000000
