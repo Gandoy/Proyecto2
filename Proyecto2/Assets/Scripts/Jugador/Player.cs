@@ -68,6 +68,15 @@ public class Player : Character {
     [SerializeField]
     private List<Image> Healthbars;
 
+    public void FullHeal()
+    {
+        HP = MaxHP;
+        foreach (Image I in Healthbars)
+        {
+
+            I.fillAmount = (float)HP / (float)MaxHP;
+        }
+    }
     public void SetWpns(bool[]Wpns)
     {
         weapons = Wpns;
