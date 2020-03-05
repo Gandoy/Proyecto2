@@ -13,7 +13,7 @@ public class Botones : MonoBehaviour, IPointerDownHandler,IPointerUpHandler {
 
     public void OnPointerDown(PointerEventData eventData)
     {
-       // Debug.Log("heyhey");
+        Debug.Log("llega al botones");
         Down.Invoke();
     }
 
@@ -23,7 +23,7 @@ public class Botones : MonoBehaviour, IPointerDownHandler,IPointerUpHandler {
     }
     private void Start()
     {
-        //Debug.Log("existe");
+        Debug.Log("existe");
     }
 
 

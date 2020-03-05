@@ -59,7 +59,7 @@ public class FlynnInput : MonoBehaviour {
     }
     public void LD()
     {
-        //Debug.Log("heyheyhey");
+        Debug.Log("llega al input receiver");
         LeftDown = true;
     }
     public void LR()
