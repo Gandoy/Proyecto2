@@ -113,6 +113,10 @@ public class Player : Character {
     {
         MaxHP = BaseHP + value;
         HP = MaxHP;
+        foreach (Image I in Healthbars)
+        {
+            I.fillAmount = (float)HP / (float)MaxHP;
+        }
     }
 
     private void StopCJ()
