@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmoothSpeed: 0.15
   offset: {x: 11.11, y: 0.894, z: 0.688}
+  Player: {fileID: 0}
 --- !u!1 &2778103857169111303
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +155,6 @@ MonoBehaviour:
   HoldTime: 2
   Down: 274
   Shoot: 122
-  CamLimit: {x: 0, y: -5.894, z: 0}
+  CamLimit: {x: 0, y: -10, z: 0}
   OriginalCamPos: {x: 0, y: 0, z: 0}
   Speed: 5

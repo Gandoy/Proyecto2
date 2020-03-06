@@ -26,6 +26,7 @@ public class ParedDestruible :Character
         }
         else
         {
+            Instantiate(SFXondeath, transform.position, transform.rotation);
             //aca se romperia la pared
             Destroy(gameObject);
         }

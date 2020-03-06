@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PupNumber: 0
+  soundQueue: {fileID: 3059133595890633484, guid: f37f47f6e740ae241b25be7e03aab167,
+    type: 3}
 --- !u!54 &1853129274516048802
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4671878951865358232}
   - component: {fileID: 4186913840210153427}
   m_Layer: 18
-  m_Name: Axe Power Up
+  m_Name: HPPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3a1b93ee63c5344a17dc414abeb31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundqueue: {fileID: 3059133595890633484, guid: f37f47f6e740ae241b25be7e03aab167,
+    type: 3}
 --- !u!1001 &7050574279409170944
 PrefabInstance:
   m_ObjectHideFlags: 0

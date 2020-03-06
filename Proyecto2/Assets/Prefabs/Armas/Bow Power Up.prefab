@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979dd9efbd64b794d963e9b9b1d027ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundQueue: {fileID: 7582584613019182904, guid: e4bd5f4a3aab60a409006279d3cb92f6,
+    type: 3}
   WpnNumber: 2
 --- !u!135 &2325727593609539432
 SphereCollider:

@@ -5,6 +5,8 @@ using UnityEngine;
 public class WeaponUp : MonoBehaviour
 {
     [SerializeField]
+    private GameObject SoundQueue;
+    [SerializeField]
     private int WpnNumber;
     private void Start()
     {
@@ -17,6 +19,7 @@ public class WeaponUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Instantiate(SoundQueue, transform.position, transform.rotation);
         Player.PlayerSingleton.TurnWpnOn(WpnNumber);
         Destroy(transform.parent.gameObject);
     }

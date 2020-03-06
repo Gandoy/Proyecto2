@@ -89,6 +89,7 @@ public class Player : Character {
     {
         if (IsHittable)
         {
+            soundQueue.Play();
             HP -= Damage;
             IsHittable = false;
             Invoke("StopBeingImmune", InvuAfterDmg);
@@ -161,10 +162,11 @@ public class Player : Character {
                 }
         else
         {
-            Debug.Log("entro el singleton");
+            //Debug.Log("entro el singleton");
             PlayerSingleton = this;
         }
         StuffToDoOnAwake();
+        
     }
    
    private void Physics()
