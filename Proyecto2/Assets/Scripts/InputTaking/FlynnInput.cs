@@ -104,4 +104,9 @@ public class FlynnInput : MonoBehaviour {
         WeaponIndex = WeaponIndex % Weapons.Count;
         P.TakeAnyInput(WeaponIndex);
     }
+    public void Pause()
+    {
+        MenuPausa.instance.PauseUnPause();
+    }
+    
 }

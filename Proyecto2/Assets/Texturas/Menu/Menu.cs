@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    private bool Muted;
+    [SerializeField]
+    private GameObject crossedaudio;
     public void Tutorial()
     {
         SceneManager.LoadScene("Tutorial");
@@ -20,22 +23,37 @@ public class Menu : MonoBehaviour
     }
     public void Nivel2()
     {
-        SceneManager.LoadScene("Nivel1-2");
+        SceneManager.LoadScene("Nivel2");
     }
     public void Nivel3()
     {
-        SceneManager.LoadScene("Nivel2");
+        SceneManager.LoadScene("Nivel3");
     }
-    public void Nivel4()
+    public void MuteUnMute()
     {
-        SceneManager.LoadScene("Nivel2-2");
+        if(!Muted)
+        {
+            AudioListener.volume = 0;
+            Muted = true;
+            crossedaudio.SetActive(false);
+        }
+        else
+        {
+            crossedaudio.SetActive(true);
+            AudioListener.volume = 1;
+            Muted = false;
+        }
+        MenuSoundFlag.instance.SoundSwap();
+        
     }
-    public void Nivel5()
+    public void Start()
     {
-        SceneManager.LoadScene("Boss5");
+        Debug.Log("entroastarm menu");
+        if (MenuSoundFlag.instance.Muted)
+        {
+            Debug.Log("busca instnace");
+            MuteUnMute();
+        }
     }
-    public void Nivelboss4()
-    {
-        SceneManager.LoadScene("Boss4");
-    }
+
 }
