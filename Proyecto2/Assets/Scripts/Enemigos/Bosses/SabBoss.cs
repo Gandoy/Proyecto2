@@ -72,6 +72,7 @@ public class SabBoss : Character {
     {
         if (!deadalready)
         {
+            LevelsSaveNLoad.instance.LvlComplete(1);
             Instantiate(SFXondeath, transform.position, transform.rotation);
             CancelInvoke();
             Invoke("scenechange", scenedelay);

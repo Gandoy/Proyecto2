@@ -38,6 +38,7 @@ public class TriBoss : Triceratops {
     {
         if (!deadalready)
         {
+            LevelsSaveNLoad.instance.LvlComplete(0);
             Instantiate(SFXondeath, transform.position, transform.rotation);
             CancelInvoke();
             Invoke("scenechange", scenedelay);

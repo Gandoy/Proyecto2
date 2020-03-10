@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Player : Character {
     [SerializeField]
     private int BaseHP;
@@ -67,7 +68,9 @@ public class Player : Character {
     private bool[] weapons = new bool[3];
     [SerializeField]
     private List<Image> Healthbars;
-
+    [SerializeField]
+    private float Restarttimer;
+    private bool dead;
     public void FullHeal()
     {
         HP = MaxHP;
@@ -98,8 +101,22 @@ public class Player : Character {
                 
                 I.fillAmount = (float)HP/(float)MaxHP;
             }
+            if (HP < 1)
+                Death();
         }
         
+    }
+    protected override void Death()
+    {
+        dead = true;
+        SoundQueue();
+        Invoke("restart", Restarttimer);
+        
+    }
+    private void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
     private void StopBeingImmune()
     {
@@ -171,61 +188,65 @@ public class Player : Character {
    
    private void Physics()
     {
-        if (CC.isGrounded)
+        if (!dead)
         {
-            Jumps = MaxJumps;
-            VerticalForce = 0;
-            AnimS.Refresh(false, "Salto");
-            UsedWJ = false;
-        }
 
-        Vector3 mov = Vector3.zero;
-        if (Input.GetKeyDown(Jumpbutton)||FlynnInput.instance.JumpDown)
-            
-        {
-            if (Jumps > 0)
+            if (CC.isGrounded)
             {
-                //aca para bajar plataformas
-                if (TakeSlideInput())
+                Jumps = MaxJumps;
+                VerticalForce = 0;
+                AnimS.Refresh(false, "Salto");
+                UsedWJ = false;
+            }
+
+            Vector3 mov = Vector3.zero;
+            if (Input.GetKeyDown(Jumpbutton) || FlynnInput.instance.JumpDown)
+
+            {
+                if (Jumps > 0)
                 {
-                    gameObject.layer = AcrossPlatformsLayer;
-                    ChrouchingJump = true;
-                    Invoke("StopCJ", CJDuration);
+                    //aca para bajar plataformas
+                    if (TakeSlideInput())
+                    {
+                        gameObject.layer = AcrossPlatformsLayer;
+                        ChrouchingJump = true;
+                        Invoke("StopCJ", CJDuration);
+                    }
+                    else
+                    {
+                        VerticalForce += JumpSpeed;
+                        Jumps--;
+                        gameObject.layer = AcrossPlatformsLayer;
+                        AnimS.Refresh(true, "Salto");
+                    }
                 }
-                else
+                else if (WallJump && Wall && !UsedWJ)
                 {
-                    VerticalForce += JumpSpeed;
-                    Jumps--;
+
+                    VerticalForce = JumpSpeed;
                     gameObject.layer = AcrossPlatformsLayer;
                     AnimS.Refresh(true, "Salto");
+                    UsedWJ = true;
                 }
+
+
             }
-            else if (WallJump&&Wall&&!UsedWJ)
+
+            if (Time.timeScale != 0f) VerticalForce -= Gravity;
+            if (VerticalForce <= 0 && !ChrouchingJump)
             {
-
-                VerticalForce = JumpSpeed;
-                gameObject.layer = AcrossPlatformsLayer;
-                AnimS.Refresh(true, "Salto");
-                UsedWJ = true;
+                gameObject.layer = DefaultLayer;
             }
-           
+            mov += Vector3.down * -VerticalForce;
+            mov += Front * TakeHorizontalInput() * HorizontalSpeed;
+            if (!isGrounded && ApplySlide)
+            {
+                mov.z += (1f - hitNormal.y) * hitNormal.z * (1f - slideFriction) * slideMultiplier;
+            }
+            CC.Move(mov * Time.deltaTime);
+            isGrounded = (Vector3.Angle(Vector3.up, hitNormal) <= slopeLimit);
 
         }
-
-       if (Time.timeScale!=0f) VerticalForce -= Gravity;
-        if (VerticalForce <= 0 && !ChrouchingJump)
-        {
-            gameObject.layer = DefaultLayer;
-        }
-        mov += Vector3.down * -VerticalForce;
-        mov += Front * TakeHorizontalInput() * HorizontalSpeed;
-        if (!isGrounded&&ApplySlide)
-        {
-            mov.z += (1f - hitNormal.y) * hitNormal.z * (1f - slideFriction)*slideMultiplier;
-        }
-        CC.Move(mov * Time.deltaTime);
-        isGrounded = (Vector3.Angle(Vector3.up, hitNormal) <= slopeLimit);
-       
     }
 
     private float TakeHorizontalInput()
@@ -254,10 +275,14 @@ public class Player : Character {
     }
     private void DoTheShooting()
     {
-        LastStone = Time.time;
-        Instantiate(Projectiles[CurrentWeapon], StoneOriginPoint.position, StoneOriginPoint.rotation);
+        if(!dead)
+        {
+            LastStone = Time.time;
+            Instantiate(Projectiles[CurrentWeapon], StoneOriginPoint.position, StoneOriginPoint.rotation);
 
-        AnimS.PlayAnim(ShootAnim);
+            AnimS.PlayAnim(ShootAnim);
+        }
+        
     }
     void Update () {
         Physics();

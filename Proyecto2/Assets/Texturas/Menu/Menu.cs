@@ -23,11 +23,13 @@ public class Menu : MonoBehaviour
     }
     public void Nivel2()
     {
+        if(LevelsSaveNLoad.instance.Levels.ContainsKey(0))
         SceneManager.LoadScene("Nivel2");
     }
     public void Nivel3()
     {
-        SceneManager.LoadScene("Nivel3");
+        if (LevelsSaveNLoad.instance.Levels.ContainsKey(1))
+            SceneManager.LoadScene("Nivel3");
     }
     public void MuteUnMute()
     {

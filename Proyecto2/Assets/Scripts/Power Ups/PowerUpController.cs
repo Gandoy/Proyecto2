@@ -20,7 +20,18 @@ public class PowerUpController : MonoBehaviour {
     private int PowerUpHPAmount;
     [SerializeField]
     private List<GameObject> Healthbars; //tiene que ser igual en tamaño al numero de power ups en el juego, automatizar si me sobra tiempo
+    public void DeleteSave()
+    {
 
+        //esta hardcodeado por un tema de unity con el manejo de archivos, se que es cancer pero dejalo asi gandy,
+        //si metes mas power ups hardcodeale mas falses.
+        PUps[0] = false;
+        PUps[1] = false;
+       //a unity no le gusta que borres archivos, te recomiendo dejarly asi aunque paresca raro.
+        Save();
+        LevelsSaveNLoad.instance.delete();
+
+    }
     public bool[] Weapons ()
     {
         return weapons;
@@ -64,6 +75,7 @@ public class PowerUpController : MonoBehaviour {
             instance = this;
            // DontDestroyOnLoad(this.gameObject);
             Load();
+            if (P!= null)
             Apply();
         }
         else
@@ -90,7 +102,7 @@ public class PowerUpController : MonoBehaviour {
         if (File.Exists(Destination)) file = File.OpenRead(Destination);
         else
         {
-            Debug.Log("no hay archivo vieja");
+            //Debug.Log("no hay archivo vieja");
             return;   
         }
         BinaryFormatter bf = new BinaryFormatter();

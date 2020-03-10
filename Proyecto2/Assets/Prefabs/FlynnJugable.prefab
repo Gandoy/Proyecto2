@@ -2256,6 +2256,7 @@ MonoBehaviour:
   ApplySlide: 0
   weapons: 010000
   Healthbars: []
+  Restarttimer: 2
 --- !u!82 &8213285217415231381
 AudioSource:
   m_ObjectHideFlags: 0
