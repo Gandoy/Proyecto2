@@ -32,4 +32,32 @@ public class PlataformaMobil : MonoBehaviour {
            
         }
     }
+    
+   /* private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("colisiono");
+       // collision.collider.transform.SetParent(transform);
+        collision.gameObject.transform.SetParent(transform);
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("descolisiono");
+        //collision.collider.transform.SetParent(null);
+        collision.gameObject.transform.SetParent(null);
+
+    }*/
+     void OnTriggerEnter(Collider collision)
+    {
+        Debug.Log("colisiono");
+        // collision.collider.transform.SetParent(transform);
+        collision.gameObject.transform.SetParent(transform);
+    }
+     void OnTriggerExit(Collider collision)
+    {
+        Debug.Log("descolisiono");
+        //collision.collider.transform.SetParent(null);
+        collision.gameObject.transform.SetParent(null);
+
+    }
+
 }

@@ -32,7 +32,7 @@ public class PteBoss : MurcielagoIA {
 
     private void DropStone()
     {
-        if (StoneDroppingWaypoints.Contains(CurrentWaypoint) && ProjectileCD + lastProjectileFired < Time.time)
+        if (StoneDroppingWaypoints.Contains(CurrentWaypoint) && ProjectileCD + lastProjectileFired < Time.time&&!deadalready)
         {
             Instantiate(Projectile, DropSpot.position, DropSpot.rotation);
             lastProjectileFired = Time.time;

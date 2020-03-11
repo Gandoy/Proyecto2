@@ -19,6 +19,7 @@ public class WeaponUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        LitMeUp.instance.Lit();
         Instantiate(SoundQueue, transform.position, transform.rotation);
         Player.PlayerSingleton.TurnWpnOn(WpnNumber);
         Destroy(transform.parent.gameObject);

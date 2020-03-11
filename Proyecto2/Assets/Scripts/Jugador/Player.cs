@@ -164,6 +164,7 @@ public class Player : Character {
     public void SwitchWeapon(int W)
     {
         CurrentWeapon = W;
+        WeaponIcons.instance.WpnSwitch(W);
     }
     protected override void StuffToDoOnAwake()
     {

@@ -33,6 +33,7 @@ public class TriBoss : Triceratops {
     [SerializeField]
     private Transform WPupSpawnP;
     private bool DroppedWeaponAlready;
+    
 
     protected override void Death()
     {

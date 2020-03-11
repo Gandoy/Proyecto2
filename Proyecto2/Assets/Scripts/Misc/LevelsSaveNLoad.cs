@@ -24,6 +24,7 @@ public class LevelsSaveNLoad : MonoBehaviour
     }
     public void LvlComplete(int index)
     {
+        if (!Levels.ContainsKey(index))
         Levels.Add(index, true);
         Save();
     }

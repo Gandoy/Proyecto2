@@ -42,6 +42,7 @@ public class ClickAndHoldDelete : MonoBehaviour, IPointerDownHandler, IPointerUp
             heldtimer += Time.deltaTime;
             if(heldtimer>HoldTime)
             {
+                GetComponent<AudioSource>().Play();
                 Debug.Log("entro al held");
                 if (OnLongClick != null)
                     OnLongClick.Invoke();
