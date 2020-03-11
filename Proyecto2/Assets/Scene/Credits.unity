@@ -189,7 +189,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Director: Nicolas Carella\nProgramador: Nicolas Carella\nDise\xF1o 2D y
-    3D: Augusto Gandoy\n\nDocente: Pablo Vilaboa\n\nAgradecimientos especiales:\nJose
+    3D: Augusto Gandoy\n\nDocente:\nPablo Vilaboa\n\nAgradecimientos especiales:\nJose
     Hiebaum\nChristian Parkinson\nNicolas Borromeo\nJorge Scali\nRicardo Moran\n\n"
 --- !u!222 &260384436
 CanvasRenderer:
@@ -580,6 +580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639059891583047069, guid: 10599a938c073c343a0f57c095451dd9,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1639059891583047071, guid: 10599a938c073c343a0f57c095451dd9,
         type: 3}
