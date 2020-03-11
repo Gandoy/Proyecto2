@@ -31,6 +31,10 @@ public class Menu : MonoBehaviour
         if (LevelsSaveNLoad.instance.Levels.ContainsKey(1))
             SceneManager.LoadScene("Nivel3");
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
     public void MuteUnMute()
     {
         if(!Muted)

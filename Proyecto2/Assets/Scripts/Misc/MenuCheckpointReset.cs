@@ -7,6 +7,7 @@ public class MenuCheckpointReset : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (CheckpointFlag.instance!=null)
         CheckpointFlag.instance.Level3 = false;
     }
 
