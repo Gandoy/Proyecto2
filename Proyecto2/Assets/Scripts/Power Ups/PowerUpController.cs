@@ -64,7 +64,9 @@ public class PowerUpController : MonoBehaviour {
     }
     public void SetPup(int Index, bool B=true)
     {
+        
         PUps[Index] = B;
+        Save();
         Apply();
     }
     private void Awake()
