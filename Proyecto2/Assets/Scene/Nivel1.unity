@@ -16066,6 +16066,7 @@ MonoBehaviour:
   - {fileID: 1599579801}
   - {fileID: 28970858}
   - {fileID: 1839961263}
+  Restarttimer: 2
 --- !u!114 &114423192475438707
 MonoBehaviour:
   m_ObjectHideFlags: 0
